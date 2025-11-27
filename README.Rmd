@@ -1,0 +1,184 @@
+````rmd
+---
+output:
+  github_document
+---
+
+<!-- BADGES -->
+<!-- Replace paths/usernames as needed -->
+
+# fsimR <img src="man/figures/logo.png" align="right" height="140"/>
+
+<!-- CRAN status -->
+[![CRAN status](https://www.r-pkg.org/badges/version/fsimR)](https://CRAN.R-project.org/package=fsimR)
+
+<!-- GitHub Actions -->
+[![R-CMD-check](https://github.com/your-github-username/fsimR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/your-github-username/fsimR/actions)
+
+<!-- Code coverage -->
+[![Codecov test coverage](https://codecov.io/gh/your-github-username/fsimR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/your-github-username/fsimR)
+
+<!-- Lifecycle -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
+<!-- License -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+---
+
+## Overview
+
+**fsimR** is an R package for **financial simulation, modeling, and scenario analysis**.  
+It streamlines common quantitative workflows, including:
+
+- Monte Carlo simulations  
+- Sensitivity analysis  
+- Scenario-based forecasting  
+- Model calibration & evaluation  
+- Visualization tools for simulated and fitted results  
+
+The package is designed to be:
+
+- **tidyverse-friendly**, with consistent function naming  
+- **extensible**, allowing custom models and workflows  
+- **reproducible**, with clear interfaces and documented workflows  
+
+---
+
+## Installation
+
+### 📦 From CRAN (when available)
+
+```r
+install.packages("fsimR")
+````
+
+### 🛠 Development version (GitHub)
+
+```r
+# install.packages("devtools")
+devtools::install_github("abhik-stat/fsimR")
+```
+
+---
+
+## Main Functions
+
+Below are the key exported functions (auto-updated in pkgdown):
+
+| Function          | Purpose                                    | Help File        |
+| ----------------- | ------------------------------------------ | ---------------- |
+| `simulate()`      | Run a simulation with specified parameters | `?simulate`      |
+| `fit_model()`     | Fit a financial model to data              | `?fit_model`     |
+| `summarise_sim()` | Summarize simulation outputs               | `?summarise_sim` |
+| `plot_results()`  | Plot simulation or model outputs           | `?plot_results`  |
+
+---
+
+## Example
+
+```r
+library(fsimR)
+
+# example: run a simulation of length 100
+result <- simulate(n = 100)
+
+# summarise results
+summary <- summarise_sim(result)
+
+# plot results
+plot_results(result)
+```
+
+Additional examples can be found in the vignette:
+
+```r
+vignette("fsimR-intro")
+```
+
+---
+
+## Vignettes
+
+### 📘 Introduction to fsimR
+
+🔗 [https://your-github-username.github.io/fsimR/articles/fsimR-intro.html](https://your-github-username.github.io/fsimR/articles/fsimR-intro.html)
+
+### (Optional future vignettes)
+
+* Simulation workflows
+* Advanced model fitting
+* Scenario-based stress testing
+* Custom simulation engines
+
+---
+
+## Documentation Website
+
+The full documentation website (built with **pkgdown**) is available at:
+
+🔗 [https://your-github-username.github.io/fsimR](https://your-github-username.github.io/fsimR)
+
+It includes:
+
+* Function reference
+* Tutorials & vignettes
+* Getting started guides
+* Developer documentation
+
+---
+
+## Contributing
+
+We welcome:
+
+* 🐛 Bug reports
+* 💡 Feature requests
+* 🔧 Pull requests
+* 📚 Documentation improvements
+
+Please submit issues or PRs via:
+
+🔗 [https://github.com/your-github-username/fsimR](https://github.com/your-github-username/fsimR)
+
+See `CONTRIBUTING.md` for development guidelines.
+
+---
+
+## Code of Conduct
+
+This project is released with a Contributor Code of Conduct.
+By contributing, you agree to abide by its terms.
+
+---
+
+## Citation
+
+If you use **fsimR** in research, please cite it:
+
+```r
+citation("fsimR")
+```
+
+---
+
+## Acknowledgments
+
+We thank contributors, testers, and colleagues who helped shape and improve **fsimR**.
+Special thanks to the R community and tidyverse team for tools and best practices.
+
+---
+
+## License
+
+This package is licensed under the **MIT License**.
+See the `LICENSE` file for details.
+
+---
+
+## References
+
+(Include any algorithms, papers, or prior works used in the simulation framework.)
+
+```
+
