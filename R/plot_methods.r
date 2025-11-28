@@ -604,7 +604,7 @@ plot.IIDdata <- function(x, main = TRUE, plot_args = list(), ...) {
 
 
 
-# =========== Plot method for Other classes ================
+# =========== Plot method for List ================
 
 # List wrapper
 #' @rdname plotSimData

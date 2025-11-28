@@ -361,9 +361,7 @@ summary.IIDdata <- function(object, ...) {
 }
 
 
-
-# =========== Summary method for Other classes ================
-
+# =========== Summary method for List ================
 
 # List wrapper
 #' @rdname summarySimData

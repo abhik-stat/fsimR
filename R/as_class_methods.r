@@ -35,6 +35,8 @@ NULL
 as.covMat <- function(object) {
   if (is.matrix(object) || is.numeric(object))
     class(object) <- c("covMat", class(object))
+  else
+    warning("Coercion to class 'covMat' is not possible for the input object.")
   object
 }
 
@@ -42,19 +44,25 @@ as.covMat <- function(object) {
 as.IIDdata <- function(object) {
   if (is.matrix(object) || is.data.frame(object) || is.numeric(object))
     class(object) <- c("IIDdata", class(object))
+  else
+    warning("Coercion to class 'IIDdata' is not possible for the input object.")
   object
 }
 
 #' @rdname asClass
 as.LMMdata <- function(object) {
-  if (is.list(object) || is.data.frame(object))
+  if (is.list(object) && all(c("y","X","Z","RE") %in% names(object)))
     class(object) <- c("LMMdata", class(object))
+  else
+    warning("Coercion to class 'LMMdata' is not possible for the input object.")
   object
 }
 
 #' @rdname asClass
 as.LMdata <- function(object) {
-  if (is.list(object) || is.data.frame(object))
+  if (is.list(object) && all(c("y","X") %in% names(object)))
     class(object) <- c("LMdata", class(object))
+  else
+    warning("Coercion to class 'LMdata' is not possible for the input object.")
   object
 }
