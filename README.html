@@ -811,6 +811,218 @@ via the <a href="https://github.com/abhik-stat/fsimR">GitHub
 repository</a>.</p>
 <hr />
 <h2 id="license">License</h2>
+<h1 id="fsimr-is-licensed-under-the-apache-license-20"><code>fsimR</code> is
+licensed under the Apache License 2.0.</h1>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<h1 id="fsimr-1">fsimR</h1>
+<p><code>fsimR</code> is an R package for simulating data from a wide
+range of statistical models. It provides a unified flexible framework
+for simulating datasets from various statistical models, along with
+summarizing, printing and visualizing simulated data. The package
+support generation of independent and identically distributed (IID) data
+under a variety of distributions, including user-defined generators and
+copula-based multivariate sampling. It also includes functions for
+generating data under linear models, generalized linear models,
+mixed-effects models, and many more, with customizable covariate
+distributions, regression coefficients, and error structures. The
+package is designed to support reproducible simulation studies,
+teaching, benchmarking, and Monte Carlo experiments. Its consistent
+interface and tidyverse-friendly design make it easy to extend and
+integrate into larger statistical workflows.</p>
+<hr />
+<h2 id="installation-1">Installation</h2>
+<p>You can install the development version from GitHub using
+<code>devtools</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Install devtools if you haven&#39;t already</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Install fsimR from GitHub</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;abhik-stat/fsimR&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="usage-example-1">Usage Example</h2>
+<p>Here is a simple example demonstrating how to define a simulation
+specification, simulate data, and plot the results:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(fsimR)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co"># Define a linear model simulation specification</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>spec <span class="ot">&lt;-</span> <span class="fu">simSpec</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="at">formula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> x2,</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="at">distribution =</span> <span class="fu">list</span>(<span class="at">x1 =</span> <span class="st">&quot;normal&quot;</span>, <span class="at">x2 =</span> <span class="st">&quot;normal&quot;</span>, <span class="at">y =</span> <span class="st">&quot;normal&quot;</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="at">x1 =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">x2 =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>)</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co"># Simulate data for a linear model</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>sim_data <span class="ot">&lt;-</span> <span class="fu">simulate_LMdata</span>(spec)</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co"># Print a summary of simulated data</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="fu">print</span>(sim_data)</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co"># Plot simulated data</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="fu">plot</span>(sim_data)</span></code></pre></div>
+<hr />
+<h2 id="functions--documentation-1">Functions &amp; Documentation</h2>
+<p>The <code>fsimR</code> package provides the following functions.
+Internal functions (starting with <code>.</code>) are not intended for
+direct use.</p>
+<h3 id="helper-functions-1">Helper Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>match.fun.allR</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/match.fun.allR.Rd">match.fun.allR.Rd</a></td>
+</tr>
+<tr>
+<td><code>distr_spec</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/distr_spec.Rd">distr_spec.Rd</a></td>
+</tr>
+<tr>
+<td><code>sim_spec</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/sim_spec.Rd">sim_spec.Rd</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exported-functions--aliases-1">Exported Functions &amp;
+Aliases</h3>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>distrSpec</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/distr_spec.Rd">distr_spec.Rd</a></td>
+<td>User-friendly alias for <code>distr_spec</code>.</td>
+</tr>
+<tr>
+<td><code>simSpec</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/sim_spec.Rd">sim_spec.Rd</a></td>
+<td>Exported simulation specification object.</td>
+</tr>
+<tr>
+<td><code>add_contamination</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/add_contamination.Rd">add_contamination.Rd</a></td>
+<td>Adds contamination/noise to simulated data.</td>
+</tr>
+<tr>
+<td><code>simulate_IIDdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_IIDdata.Rd">simulate_IIDdata.Rd</a></td>
+<td>Simulates IID data.</td>
+</tr>
+<tr>
+<td><code>simulate_LMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_LMdata.Rd">simulate_LMdata.Rd</a></td>
+<td>Simulates linear model data.</td>
+</tr>
+<tr>
+<td><code>simulate_LMMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_LMMdata.Rd">simulate_LMMdata.Rd</a></td>
+<td>Simulates linear mixed model data.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plot-methods-for-simulated-data-1">Plot Methods for Simulated
+Data</h3>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plotSimData</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Main plotting function for simulated data objects.</td>
+</tr>
+<tr>
+<td><code>plot.GLMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for GLM simulation output.</td>
+</tr>
+<tr>
+<td><code>plot.GLMMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for GLMM simulation output.</td>
+</tr>
+<tr>
+<td><code>plot.IIDdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for IID simulation output.</td>
+</tr>
+<tr>
+<td><code>plot.LMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for LM simulation output.</td>
+</tr>
+<tr>
+<td><code>plot.LMMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for LMM simulation output.</td>
+</tr>
+<tr>
+<td><code>plot.list</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd">plotSimData.Rd</a></td>
+<td>Plot method for lists of simulated data.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="print-methods-for-simulated-data-1">Print Methods for Simulated
+Data</h3>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>printSimData</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd">printSimData.Rd</a></td>
+<td>Main print method for simulated data objects.</td>
+</tr>
+<tr>
+<td><code>print.GLMMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd">printSimData.Rd</a></td>
+<td>Print method for GLMM simulation output.</td>
+</tr>
+<tr>
+<td><code>print.LMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd">printSimData.Rd</a></td>
+<td>Print method for LM simulation output.</td>
+</tr>
+<tr>
+<td><code>print.LMMdata</code></td>
+<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd">printSimData.Rd</a></td>
+<td>Print method for LMM simulation output.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="citation-1">Citation</h2>
+<p>If you use <code>fsimR</code> in your research, please cite it:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">citation</span>(<span class="st">&quot;fsimR&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="contributing-1">Contributing</h2>
+<p>Contributions are welcome! Please open issues or submit pull requests
+via the <a href="https://github.com/abhik-stat/fsimR">GitHub
+repository</a>.</p>
+<hr />
+<h2 id="license-1">License</h2>
 <p><code>fsimR</code> is licensed under the Apache License 2.0.</p>
 
 </body>

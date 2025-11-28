@@ -169,19 +169,23 @@ x <- simulate_IIDdata(500, "laplace")
 mean(x); var(x); hist(x)
 
 # From a recommended package (MASS)
-simulate_IIDdata(5, "MASS::rnegbin", list(mu = 5, theta = 2))
+x <- simulate_IIDdata(5, "MASS::rnegbin", list(mu = 5, theta = 2))
+mean(x); var(x); hist(x)
 
 # Custom generator
 my_custom <- function(n, min = 1, max = 100) sample(min:max, n, replace = TRUE)
-simulate_IIDdata(500, "custom", distr_params = list(min = 1, max = 10), generator = my_custom)
+x <- simulate_IIDdata(500, "custom", distr_params = list(min = 1, max = 10), generator = my_custom)
+mean(x); var(x); plot(x)
 
 # Multivariate example
 params <- distr_spec(dim = 3, mean = 1:3, sigma = diag(3))
-simulate_IIDdata(5, "mvnorm", params)
+x <- simulate_IIDdata(5, "mvnorm", params)
+plot(x)
 
 # Skew-normal (requires \pkg{sn})
 if (requireNamespace("sn", quietly = TRUE)) {
-  simulate_IIDdata(50, "skewnorm")
+  x <- simulate_IIDdata(50, "skewnorm")
+  plot(x)
 }
 
 # Copula-based Examples
@@ -195,7 +199,8 @@ if (requireNamespace("copula", quietly = TRUE)) {
     list(dist = "norm", params = list(mean = 1, sd = 2)),
     list(dist = "norm", params = list(mean = -1, sd = 0.5))
   )
-  simulate_IIDdata(5, "copula", list(dim = 3, copula = cop, margins = margins))
+  x<-simulate_IIDdata(5, "copula", list(dim = 3, copula = cop, margins = margins))
+  plot(x)
 
   # Gumbel copula with mixed margins
   gumbel_cop <- gumbelCopula(param = 2, dim = 4)
@@ -205,7 +210,8 @@ if (requireNamespace("copula", quietly = TRUE)) {
     list(dist = "exp", params = list(rate = 2)),
     list(dist = "unif", params = list(min = 0, max = 1))
   )
-  simulate_IIDdata(10, "copula", list(dim = 4, copula = gumbel_cop, margins = mixed_margins))
+  x <- simulate_IIDdata(10, "copula", list(dim = 4, copula = gumbel_cop, margins = mixed_margins))
+  plot(x)
 
   # Large-dimensional Gaussian copula with exponential margins
   d <- 20
@@ -215,6 +221,7 @@ if (requireNamespace("copula", quietly = TRUE)) {
   norm_cop <- normalCopula(P2p(Sigma), dim = d, dispstr = "un")
   x_large <- simulate_IIDdata(10, "copula", list(dim = d, copula = norm_cop, margins = exp_margins))
   dim(x_large)  # should be 10 x 20
+  plot(x)
 }
 
 }

@@ -1,6 +1,6 @@
 Package: fsimR
 Type: Package
-Title: Flexible Simulation from Structured Statistical Models in R
+Title: Flexible Simulation from Statistical Models in R
 Version: 0.1.0
 Authors@R: 
     person("Abhik", "Ghosh", email = "abhik.ghosh.stat@gmail.com",
