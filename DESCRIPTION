@@ -6,14 +6,18 @@ Authors@R:
     person("Abhik", "Ghosh", email = "abhik.ghosh.stat@gmail.com",
            role = c("aut", "cre"))
 Description: 
-    Provides a unified flexible framework for simulating datasets from various statistical models. 
-    The package includes a function for generating independent and identically 
+    fsimR provides  a unified flexible framework for simulating datasets 
+    from various statistical models, along with summarizing, printing and visualizing 
+    simulated data. 
+    The package support generation of independent and identically 
     distributed (IID) data under a variety of distributions, including user-defined 
     generators and copula-based multivariate sampling. It also includes 
     functions for generating data under linear models, generalized linear models, 
     mixed-effects models, and many more, with customizable covariate distributions, 
     regression coefficients, and error structures. The package is designed to support 
     reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. 
+    Its consistent interface and tidyverse-friendly design make it easy to extend 
+    and integrate into larger statistical workflows.
 License: CC BY 4.0 + file LICENSE
 Encoding: UTF-8
 LazyData: true
