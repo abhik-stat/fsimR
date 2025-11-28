@@ -4,7 +4,7 @@
 #' @title Plot Histogram With Optional Density Overlay
 #' @description
 #' Internal helper for plotting histograms with an optional kernel density curve.
-#' For diagonal panels in pairs plots, counts and density are scaled to [0,1].
+#' For diagonal panels in pairs plots, counts and density are scaled to \code{[0,1]}.
 #'
 #' Skips plotting if data has only one unique value.
 #'
@@ -14,6 +14,7 @@
 #' @param main Logical; if TRUE, display the main title specified in `main_text`.
 #' @param plot_args List of graphical  parameters (colors, breaks, line widths, etc.)
 #' @param ... Additional graphical parameters passed to `hist()` or `lines()`
+#' @noRd
 #'
 .plot_hist_density <- function(x_vec, main_text = NULL, label = NULL,
                                is_diag = FALSE, main = TRUE,
@@ -73,7 +74,7 @@
 #' @title Correlation Panel for Pairs Plots
 #'
 #' @description
-#' Displays correlation coefficient `r`, p-value (`p`),
+#' Displays correlation coefficient \code{r}, p-value (`p`),
 #' and significance stars in the selected panels of pairs plots,
 #' using math expressions. Negative correlations are marked in red,
 #' and background color is scaled by the absolute correlation.
@@ -81,10 +82,10 @@
 #' @param x,y Numeric vectors to plot.
 #' @param digits Number of digits used for correlation coefficient and p-value rounding (default 4).
 #' @param cex Character expansion factor for text (default 1.2).
-#' @param low_col Background color for `r = 0` (default "#FFFFFF").
+#' @param low_col Background color for \code{r = 0} (default "#FFFFFF").
 #' @param high_col Background color for `|r| = 1` (default "#2166AC").
 #' @param ... Additional graphical arguments passed to text().
-#'
+#' @noRd
 .panel.cor.p <- function(x, y,
                          digits = 4,
                          cex = 1.2,
@@ -167,7 +168,7 @@
 #' @param main_text Character: main title for the plot.
 #' @param plot_args List of graphical parameters (colors, line widths, label offsets)
 #' @param ... Additional arguments passed to `pairs` and panel functions
-#'
+#' @noRd
 .plot_pairs <- function(mat, main_text = NULL, plot_args = list(), ...) {
 
   mat <- as.data.frame(mat)
@@ -315,7 +316,7 @@
 #'     \item{smooth_lwd}{Smoothing line width (default `2`)}
 #'     \item{cex_axis}{Character expansion for axis labels (default `1.4`)}
 #'     \item{label_line}{Line offset for margin labels (default `0`)}
-#'     \item{low_col}{Background color for `r = 0` in correlation panels (default `"#FFFFFF"`)}
+#'     \item{low_col}{Background color for \code{r = 0} in correlation panels (default `"#FFFFFF"`)}
 #'     \item{high_col}{Background color for `|r| = 1` in correlation panels (default `"#2166AC"`)}
 #'     \item{cex_text}{Character expansion for correlation/p-value text (default `1.4`)}
 #'     \item{digits}{Number of digits for correlation/p-value (default `4`)}.
@@ -334,7 +335,7 @@
 #'    Skipped for constant vectors.
 #'
 #' 2. **Enhanced pairs plots** for matrices (`X`, `Z`, `RE`) or multivariate IID samples:
-#'    - Diagonal panels: histograms with density scaled to [0, 1].
+#'    - Diagonal panels: histograms with density scaled to \code{[0,1]}.
 #'    - Upper panels: scatter plots with smoothing lines ([loess]).
 #'    - Lower panels: correlation coefficients, p-values,
 #'      and significance stars (`*`, `**`, `***`).

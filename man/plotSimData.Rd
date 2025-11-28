@@ -113,7 +113,7 @@ or any numeric vector (treated as a univariate IID samples).
 Skipped for constant vectors.
 \item \strong{Enhanced pairs plots} for matrices (\code{X}, \code{Z}, \code{RE}) or multivariate IID samples:
 \itemize{
-\item Diagonal panels: histograms with density scaled to \link{0, 1}.
+\item Diagonal panels: histograms with density scaled to \code{[0,1]}.
 \item Upper panels: scatter plots with smoothing lines (\link{loess}).
 \item Lower panels: correlation coefficients, p-values,
 and significance stars (\code{*}, \verb{**}, \verb{***}).

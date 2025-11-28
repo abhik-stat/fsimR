@@ -2,7 +2,6 @@
 #'
 #' @description
 #' Introduces controlled contamination into simulated datasets.
-#'
 #' Contamination can be applied to:
 #' - **Mixed Model datasets** (of class `LMMdata` or `GLMMdata`)
 #' - **Regression datasets** (of class `LMdata` or `GLMdata`)
@@ -11,13 +10,11 @@
 #'   - `y`: response vector or matrix
 #'   - `X`: fixed-effects design matrix
 #'   - `Z`: random-effects design matrix (optional)
-#'
 #' Numeric vectors or matrices are treated as IID samples (columns = variables).
 #'
 #'
 #' @param simData Numeric vector, matrix, named list, or simulation object
 #'    (of class `LMMdata`, `GLMMdata`, `LMdata`, `GLMdata`, `IIDdata`).
-#'
 #'   - If a **list**, it must include the component specified in `cont_pos$name`.
 #'   - If a **vector/matrix**, it is treated as the target component to contaminate.
 #'
@@ -37,10 +34,11 @@
 #'   \item{cont_mode}{Mode of contamination: `"casewise"` (default) or `"cellwise"`.
 #'     - `"casewise"`: Same rows contaminated across all specified columns.
 #'     - `"cellwise"`: Different rows may be contaminated independently per column.}
-#'   \item{cont_prop}{Proportion of contamination (0–1).
+#'
+#'   \item{cont_prop}{Proportion of contamination \code{[0,1]}.
 #'      In `casewise` mode, this is the proportion of rows.
 #'     In `cellwise` mode, this is the proportion of cells across all selected columns.
-#'     (default: `0.1`)}
+#'     (default: \code{c(0,1)})}
 #'
 #'   \item{cont_value}{Optional numeric scalar or vector specifying contamination values.
 #'     If provided, this overrides `cont_distr` and no random generation occurs.
@@ -49,29 +47,24 @@
 #'   \item{cont_distr}{Named list describing the distribution of contamination
 #'     values (only when `cont_value` is not provided).
 #'     Accepts:
-#'     \describe{
-#'       \item{distr_name}{Distribution name (e.g., `"norm"`, `"t"`, `"unif"`).}
-#'       \item{distr_params}{List of distribution parameters (see [simulate_IIDdata]).}
-#'       \item{generator}{Optional custom generator function.}
+#'     \itemize{
+#'       \item `distr_name` Distribution name (e.g., `"norm"`, `"t"`, `"unif"`).
+#'       \item `distr_params` List of distribution parameters (see [simulate_IIDdata]).
+#'       \item `generator` Optional custom generator function.
 #'     }
 #'     The default is the standard normal distribution.}
 #'
 #'   \item{cont_type}{Character string specifying the contamination mechanism:
-#'     \describe{
-#'       \item{"additive"}{Adds contamination values to selected rows/cells (default).}
-#'
-#'       \item{"multiplicative"}{Multiplies values in selected rows/cells
-#'          by contamination values.}
-#'
-#'       \item{"replace"}{Replaces values in selected rows/cells with contamination values.}
-#'
-#'       \item{"outlier"}{Sets selected rows/cells to extreme values of the form:
+#'     \itemize{
+#'       \item "additive": Adds contamination values to selected rows/cells (default).
+#'       \item "multiplicative": Multiplies values in selected rows/cells by contamination values.
+#'       \item "replace": Replaces values in selected rows/cells with contamination values.
+#'       \item "outlier": Sets selected rows/cells to extreme values of the form:
 #'     \deqn{\text{mean} \pm (\text{sd} \times \text{outlier_factor}).}
-#'        This generates classical point outliers.}
-#'
-#'       \item{"leverage"}{Generates high-leverage points in `X` or `Z`.
+#'        This generates classical point outliers.
+#'       \item "leverage": Generates high-leverage points in `X` or `Z`.
 #'         Corresponding rows in `y` (if present) are shifted in the opposite direction.
-#'         See *Details* for full description.}
+#'         See *Details* for full description.
 #'     }}
 #'
 #'   \item{leverage_factor}{Numeric multiplier controlling the magnitude
@@ -107,7 +100,7 @@
 #'
 #' *Distribution-based contamination:*
 #' When `cont_value = NULL`, random contamination values are generated using
-#' `simulate_IIDdata()`, allowing flexible custom distributions or user-provided generators.
+#' [simulate_IIDdata], allowing flexible custom distributions or user-provided generators.
 #'
 #'
 #'
@@ -179,7 +172,6 @@
 #'   )
 #' )
 #'
-#' @importFrom stats rnorm mean sd colMeans ncol nrow runif ceiling
 #' @importFrom utils modifyList
 #'
 #' @export

@@ -29,10 +29,11 @@ and all such columns are contaminated consistently.}
 \item{cont_mode}{Mode of contamination: \code{"casewise"} (default) or \code{"cellwise"}.
 - \code{"casewise"}: Same rows contaminated across all specified columns.
 - \code{"cellwise"}: Different rows may be contaminated independently per column.}
-\item{cont_prop}{Proportion of contamination (0–1).
+
+\item{cont_prop}{Proportion of contamination \code{[0,1]}.
 In \code{casewise} mode, this is the proportion of rows.
 In \code{cellwise} mode, this is the proportion of cells across all selected columns.
-(default: \code{0.1})}
+(default: \code{c(0,1)})}
 
 \item{cont_value}{Optional numeric scalar or vector specifying contamination values.
 If provided, this overrides \code{cont_distr} and no random generation occurs.
@@ -41,31 +42,25 @@ If provided, this overrides \code{cont_distr} and no random generation occurs.
 \item{cont_distr}{Named list describing the distribution of contamination
 values (only when \code{cont_value} is not provided).
 Accepts:
-\describe{
-\item{distr_name}{Distribution name (e.g., \code{"norm"}, \code{"t"}, \code{"unif"}).}
-\item{distr_params}{List of distribution parameters (see \link{simulate_IIDdata}).}
-\item{generator}{Optional custom generator function.}
+\itemize{
+\item \code{distr_name} Distribution name (e.g., \code{"norm"}, \code{"t"}, \code{"unif"}).
+\item \code{distr_params} List of distribution parameters (see \link{simulate_IIDdata}).
+\item \code{generator} Optional custom generator function.
 }
 The default is the standard normal distribution.}
 
 \item{cont_type}{Character string specifying the contamination mechanism:
-\describe{
-\item{"additive"}{Adds contamination values to selected rows/cells (default).}
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{  \\item\{"multiplicative"\}\{Multiplies values in selected rows/cells
-     by contamination values.\}
-
-  \\item\{"replace"\}\{Replaces values in selected rows/cells with contamination values.\}
-
-  \\item\{"outlier"\}\{Sets selected rows/cells to extreme values of the form:
+\itemize{
+\item "additive": Adds contamination values to selected rows/cells (default).
+\item "multiplicative": Multiplies values in selected rows/cells by contamination values.
+\item "replace": Replaces values in selected rows/cells with contamination values.
+\item "outlier": Sets selected rows/cells to extreme values of the form:
 \deqn{\text{mean} \pm (\text{sd} \times \text{outlier_factor}).}
-   This generates classical point outliers.\}
-
-  \\item\{"leverage"\}\{Generates high-leverage points in `X` or `Z`.
-    Corresponding rows in `y` (if present) are shifted in the opposite direction.
-    See *Details* for full description.\}
-\}\}
-}\if{html}{\out{</div>}}
+This generates classical point outliers.
+\item "leverage": Generates high-leverage points in \code{X} or \code{Z}.
+Corresponding rows in \code{y} (if present) are shifted in the opposite direction.
+See \emph{Details} for full description.
+}}
 
 \item{leverage_factor}{Numeric multiplier controlling the magnitude
 of leverage contamination  (default: \code{5}).}
@@ -88,7 +83,6 @@ with the requested contamination applied.
 }
 \description{
 Introduces controlled contamination into simulated datasets.
-
 Contamination can be applied to:
 \itemize{
 \item \strong{Mixed Model datasets} (of class \code{LMMdata} or \code{GLMMdata})
@@ -99,10 +93,9 @@ Contamination can be applied to:
 \item \code{y}: response vector or matrix
 \item \code{X}: fixed-effects design matrix
 \item \code{Z}: random-effects design matrix (optional)
-}
-}
-
 Numeric vectors or matrices are treated as IID samples (columns = variables).
+}
+}
 }
 \details{
 The function provides a general framework for injecting various forms of contamination
@@ -126,7 +119,7 @@ scaled by \code{outlier_factor}, creating influential points within the regressi
 
 \emph{Distribution-based contamination:}
 When \code{cont_value = NULL}, random contamination values are generated using
-\code{simulate_IIDdata()}, allowing flexible custom distributions or user-provided generators.
+\link{simulate_IIDdata}, allowing flexible custom distributions or user-provided generators.
 }
 \examples{
 # Additive contamination to an IID sample

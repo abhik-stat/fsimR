@@ -9,7 +9,7 @@
 #' The function resolves parameter *alias groups* (location, scale, shape),
 #' infers the dimension of the distribution, validates
 #' compatibility across parameter groups, and returns a fully specified
-#' list of distribution parameters. See @details.
+#' list of distribution parameters.
 #'
 #'
 #' @param dim Integer (>0). Initial dimension of the random variable.
@@ -37,7 +37,7 @@
 #'   two shape parameters (e.g., beta). Default: \code{1} for both.
 #' @param size Integer (>0). Size parameter for binomial-type distributions.
 #'   Default: \code{1}.
-#' @param prob Numeric in [0,1]. Probability parameter. Default: \code{0.5}.
+#' @param prob Numeric in \code{[0,1]}. Probability parameter. Default: \code{0.5}.
 #' @param meanlog,sdlog Numeric. Mean and standard deviation on the log-scale.
 #'   Defaults: \code{0}, \code{1}.
 #' @param min,max Numeric. Lower and upper bounds of the support for bounded distributions,

@@ -113,7 +113,7 @@ two shape parameters (e.g., beta). Default: \code{1} for both.}
 \item{size}{Integer (>0). Size parameter for binomial-type distributions.
 Default: \code{1}.}
 
-\item{prob}{Numeric in \link{0,1}. Probability parameter. Default: \code{0.5}.}
+\item{prob}{Numeric in \code{[0,1]}. Probability parameter. Default: \code{0.5}.}
 
 \item{meanlog, sdlog}{Numeric. Mean and standard deviation on the log-scale.
 Defaults: \code{0}, \code{1}.}
@@ -150,7 +150,7 @@ all simulator functions, e.g., \code{\link{simulate_IIDdata}},
 The function resolves parameter \emph{alias groups} (location, scale, shape),
 infers the dimension of the distribution, validates
 compatibility across parameter groups, and returns a fully specified
-list of distribution parameters. See @details.
+list of distribution parameters.
 }
 \details{
 \strong{Alias groups:}

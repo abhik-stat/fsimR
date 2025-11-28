@@ -73,7 +73,7 @@
 #' summary(mylist, replication = 1, iteration = 1)
 #' }
 #'
-#' @rdname summarySimData
+#' @name summarySimData
 NULL
 
 

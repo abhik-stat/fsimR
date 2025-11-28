@@ -117,7 +117,7 @@ Normal                     \tab normal, gaussian, norm     → \link{rnorm}     
 Multivariate Normal        \tab mvnorm, mvn                → \link[mvtnorm:Mvnorm]{mvtnorm::rmvnorm}   \tab mean = rep(0, dim), sigma = diag(dim)\cr
 Multivariate Normal (Singular)   \tab smvnorm, smvn        → \link[mgcv:rmvn]{mgcv::rmvn}         \tab mu = rep(0, dim), V = diag(dim)\cr
 Multivariate t             \tab mvt                        → \link[mvtnorm:Mvt]{mvtnorm::rmvt}      \tab sigma = diag(dim), df = 5, delta = rep(0, dim)\cr
-Multivariate t (Singular)  \tab smvt                       → \link[mgcv:r.mvnt]{mgcv::r.mvnt}       \tab mu = rep(0, dim), V = diag(dim), df = 5\cr
+Multivariate t (Singular)  \tab smvt                       → \link[mgcv]{r.mvnt}  \tab mu = rep(0, dim), V = diag(dim), df = 5\cr
 Skew-normal (univariate)   \tab skewnorm, sn               → \link[sn:dsn]{sn::rsn}            \tab xi = 0, omega = 1, alpha = 0, tau = 0\cr
 Skew-normal (multivariate) \tab mvsnorm, mvsn              → \link[sn:dmsn]{sn::rmsn}           \tab xi = alpha = rep(0, dim), Omega = diag(dim), tau = 0 \cr
 Skew-t (univariate)        \tab skewt, st                  → \link[sn:dst]{sn::rst}            \tab xi = 0, omega = 1, alpha = 0, nu = 5\cr
@@ -228,12 +228,11 @@ if (requireNamespace("copula", quietly = TRUE)) {
 \item Johnson NL, Kotz S, Balakrishnan N (1995). \emph{Continuous Univariate Distributions, Volume 2} (2nd ed.) Wiley. ISBN 978-0-471-58494-0. \url{https://www.wiley.com/en-us/Continuous+Univariate+Distributions\%2C+Volume+2\%2C+2nd+Edition-p-9780471584940}
 \item Johnson NL, Kotz S, Balakrishnan N (1997). \emph{Discrete Multivariate Distributions} Wiley. ISBN 978-0-471-12844-1. \url{https://www.wiley.com/en-us/Discrete+Multivariate+Distributions-p-9780471128441}
 \item Johnson NL, Kotz S, Kemp AW (2005). \emph{Univariate Discrete Distributions} (3rd ed.) Wiley. \url{https://www.wiley.com/en-us/Univariate+Discrete+Distributions\%2C+3rd+Edition-p-9780471712384}
-\item Kotz S, Balakrishnan N, Johnson NL (2000). \emph{Continuous Multivariate Distributions, Volume 1: Models & Applications} (2nd ed.) Wiley. ISBN 978-0-471-18387-7. \url{https://www.wiley.com/en-us/Continuous+Multivariate+Distributions%2C+Volume+1%3A+Models+and+Applications-p-9780471183877}
-  \item Lai CD, Balakrishnan N (2002). \emph{Continuous Bivariate Distributions} Springer. \url{https://link.springer.com/book/10.1007/b101765}
-  \item Nelsen RB (2006). \emph{An Introduction to Copulas} (2nd ed.) Springer. \url{https://link.springer.com/book/10.1007/0-387-28678-0}
+\item Kotz S, Balakrishnan N, Johnson NL (2000). \emph{Continuous Multivariate Distributions, Volume 1: Models & Applications} (2nd ed.) Wiley. ISBN 978-0-471-18387-7. \url{https://www.wiley.com/en-us/Continuous+Multivariate+Distributions\%2C+Volume+1\%3A+Models+and+Applications-p-9780471183877}
+\item Lai CD, Balakrishnan N (2002). \emph{Continuous Bivariate Distributions} Springer. \url{https://link.springer.com/book/10.1007/b101765}
+\item Nelsen RB (2006). \emph{An Introduction to Copulas} (2nd ed.) Springer. \url{https://link.springer.com/book/10.1007/0-387-28678-0}
 }
 }
 \seealso{
-\code{\link[=distr_spec]{distr_spec()}}, \code{\link{match.fun.allR}},
-\code{\link[=summary.IIDdata]{summary.IIDdata()}}, \code{\link[=plot.IIDdata]{plot.IIDdata()}}, \code{\link[=print.IIDdata]{print.IIDdata()}}
+\code{\link[=distr_spec]{distr_spec()}}, \code{\link{match.fun.allR}}, \link{summary.IIDdata}, \link{plot.IIDdata}
 }
