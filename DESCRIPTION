@@ -40,3 +40,4 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+URL: https://abhik-stat.github.io/fsimR/
