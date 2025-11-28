@@ -3,7 +3,7 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   fsimR: fsimR.html
-last_built: 2025-11-28T06:46Z
+last_built: 2025-11-28T07:00Z
 urls:
   reference: https://abhik-stat.github.io/fsimR/reference
   article: https://abhik-stat.github.io/fsimR/articles
