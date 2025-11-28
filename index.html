@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Flexible Simulation from Statistical Models in R • fsimR</title>
+<title>fsimR: Flexible Simulation from Statistical Models in R • fsimR</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Flexible Simulation from Statistical Models in R">
-<meta name="description" content="fsimR provides a unified flexible framework for simulating datasets from various statistical models, along with summarizing, printing and visualizing simulated data. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data under linear models, generalized linear models, mixed-effects models, and many more, with customizable covariate distributions, regression coefficients, and error structures. The package is designed to support reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. Its consistent interface and tidyverse-friendly design make it easy to extend and integrate into larger statistical workflows.">
-<meta property="og:description" content="fsimR provides a unified flexible framework for simulating datasets from various statistical models, along with summarizing, printing and visualizing simulated data. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data under linear models, generalized linear models, mixed-effects models, and many more, with customizable covariate distributions, regression coefficients, and error structures. The package is designed to support reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. Its consistent interface and tidyverse-friendly design make it easy to extend and integrate into larger statistical workflows.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="fsimR: Flexible Simulation from Statistical Models in R">
+<meta name="description" content="This R package provides a unified flexible framework for simulating data from a wide range of structured statistical models with ease of control. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data from different regression and mixed-effects models, with customizable covariate distributions and error structures. It also allows summarizing, printing and visualizing simulated data, as well as adding artificial contamination or censoring of various types.">
+<meta property="og:description" content="This R package provides a unified flexible framework for simulating data from a wide range of structured statistical models with ease of control. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data from different regression and mixed-effects models, with customizable covariate distributions and error structures. It also allows summarizing, printing and visualizing simulated data, as well as adding artificial contamination or censoring of various types.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -48,7 +48,8 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="fsimr">fsimR<a class="anchor" aria-label="anchor" href="#fsimr"></a>
 </h1></div>
-<p><code>fsimR</code> is an R package for simulating data from a wide range of statistical models. It provides a unified flexible framework for simulating datasets from various statistical models, along with summarizing, printing and visualizing simulated data. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data under linear models, generalized linear models, mixed-effects models, and many more, with customizable covariate distributions, regression coefficients, and error structures. The package is designed to support reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. Its consistent interface and tidyverse-friendly design make it easy to extend and integrate into larger statistical workflows.</p>
+<p>This R package provides a unified flexible framework for simulating data from a wide range of structured statistical models with ease of control. The package support generation of independent and identically distributed (IID) data under a variety of distributions, including user-defined generators and copula-based multivariate sampling. It also includes functions for generating data from different regression and mixed-effects models, with customizable covariate distributions and error structures. It also allows summarizing, printing and visualizing simulated data, as well as adding artificial contamination or censoring of various types.</p>
+<p>The package is designed to support reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. Its consistent interface and tidyverse-friendly design make it easy to extend and integrate into larger statistical workflows.</p>
 <hr>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -63,201 +64,150 @@
 <hr>
 </div>
 <div class="section level2">
+<h2 id="functions--documentation">Functions &amp; Documentation<a class="anchor" aria-label="anchor" href="#functions--documentation"></a>
+</h2>
+<p>The <code>fsimR</code> package provides the following functions.</p>
+<div class="section level3">
+<h3 id="helper-functions">Helper Functions<a class="anchor" aria-label="anchor" href="#helper-functions"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>distr_spec</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/distr_spec.html"><code>distr_spec.Rd</code></a></td>
+<td>Distribution Specification Constructor</td>
+</tr>
+<tr class="even">
+<td><code>sim_spec</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/sim_spec.html"><code>sim_spec.Rd</code></a></td>
+<td>Simulation Specification Constructor</td>
+</tr>
+<tr class="odd">
+<td><code>match.fun.allR</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html"><code>match.fun.allR.Rd</code></a></td>
+<td>Find a Function Across Base R and All Installed R Packages</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3 id="main-simulation-functions">Main Simulation Functions<a class="anchor" aria-label="anchor" href="#main-simulation-functions"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>add_contamination</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/add_contamination.html">add_contamination.Rd</a></td>
+<td>Adds contamination/noise to simulated data.</td>
+</tr>
+<tr class="even">
+<td><code>simulate_IIDdata</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.html">simulate_IIDdata.Rd</a></td>
+<td>Simulate IID Data from a Wide Range of Univariate and Multivariate Distributions.</td>
+</tr>
+<tr class="odd">
+<td><code>simulate_LMdata</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.html">simulate_LMdata.Rd</a></td>
+<td>Simulate Data from a Linear Regression Model</td>
+</tr>
+<tr class="even">
+<td><code>simulate_LMMdata</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.html">simulate_LMMdata.Rd</a></td>
+<td>Simulate Data from a Linear Mixed Model (LMM)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level3">
+<h3 id="s3-generic-methods-for-simulated-data">S3 Generic Methods for Simulated Data<a class="anchor" aria-label="anchor" href="#s3-generic-methods-for-simulated-data"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Function Name</th>
+<th>Documentation</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>as.&lt;class&gt;</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/asClass.html">asClass.Rd</a></td>
+<td>Coercion into package-specific classes.</td>
+</tr>
+<tr class="even">
+<td><code>plot</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/plotSimData.html">plotSimData.Rd</a></td>
+<td>Plot simulated data objects.</td>
+</tr>
+<tr class="odd">
+<td><code>print</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/printSimData.html">printSimData.Rd</a></td>
+<td>Print simulated data objects.</td>
+</tr>
+<tr class="even">
+<td><code>summary</code></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/summarySimData.html">summarySimData.Rd</a></td>
+<td>Summarize simulated data objects.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="section level2">
 <h2 id="usage-example">Usage Example<a class="anchor" aria-label="anchor" href="#usage-example"></a>
 </h2>
 <p>Here is a simple example demonstrating how to define a simulation specification, simulate data, and plot the results:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://abhik-stat.github.io/fsimR/">fsimR</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Define a linear model simulation specification</span></span>
-<span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sim_spec.html">simSpec</a></span><span class="op">(</span></span>
-<span>  formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x1</span> <span class="op">+</span> <span class="va">x2</span>,</span>
-<span>  distribution <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x1 <span class="op">=</span> <span class="st">"normal"</span>, x2 <span class="op">=</span> <span class="st">"normal"</span>, y <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span>,</span>
-<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>, x2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># Define a linear model simulation specification with Non-Gaussian error and multivariate predictors</span></span>
+<span><span class="va">sim_settings</span> <span class="op">=</span> <span class="fu"><a href="reference/sim_spec.html">sim_spec</a></span><span class="op">(</span>n_subj <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">distr_settings</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>error_distr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>distr_name <span class="op">=</span> <span class="st">"t"</span>, distr_params <span class="op">=</span> <span class="fu"><a href="reference/distr_spec.html">distr_spec</a></span><span class="op">(</span>df <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>X_distr    <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>distr_name <span class="op">=</span> <span class="st">"mvnorm"</span>, distr_params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>dim <span class="op">=</span> <span class="fl">4</span>, sigma <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Simulate data for a linear model</span></span>
-<span><span class="va">sim_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/simulate_LMdata.html">simulate_LMdata</a></span><span class="op">(</span><span class="va">spec</span><span class="op">)</span></span>
+<span><span class="va">sim_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/simulate_LMdata.html">simulate_LMdata</a></span><span class="op">(</span>n_rep <span class="op">=</span> <span class="fl">1</span>, sim_settings <span class="op">=</span> <span class="va">sim_settings</span>, distr_settings <span class="op">=</span> <span class="va">distr_settings</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Print a summary of simulated data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">sim_data</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plot simulated data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sim_data</span><span class="op">)</span></span></code></pre></div>
+<p>More complex and realistic examples can be found in:</p>
+<ul>
+<li><a href="https://abhik-stat.github.io/fsimR/articles/examples_multivar.html">Multivariate Data</a></li>
+<li><a href="https://abhik-stat.github.io/fsimR/articles/examples_LM.html">Linear Regression Models</a></li>
+<li><a href="https://abhik-stat.github.io/fsimR/articles/examples_LMM.html">Linear Mixed Models</a></li>
+</ul>
 <hr>
-</div>
-<div class="section level2">
-<h2 id="functions--documentation">Functions &amp; Documentation<a class="anchor" aria-label="anchor" href="#functions--documentation"></a>
-</h2>
-<p>The <code>fsimR</code> package provides the following functions. Internal functions (starting with <code>.</code>) are not intended for direct use.</p>
-<div class="section level3">
-<h3 id="helper-functions">Helper Functions<a class="anchor" aria-label="anchor" href="#helper-functions"></a>
-</h3>
-<table class="table">
-<colgroup>
-<col width="50%">
-<col width="50%">
-</colgroup>
-<thead><tr class="header">
-<th>Function Name</th>
-<th>Documentation</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>match.fun.allR</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/match.fun.allR.Rd" class="external-link">match.fun.allR.Rd</a></td>
-</tr>
-<tr class="even">
-<td><code>distr_spec</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/distr_spec.Rd" class="external-link">distr_spec.Rd</a></td>
-</tr>
-<tr class="odd">
-<td><code>sim_spec</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/sim_spec.Rd" class="external-link">sim_spec.Rd</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level3">
-<h3 id="exported-functions--aliases">Exported Functions &amp; Aliases<a class="anchor" aria-label="anchor" href="#exported-functions--aliases"></a>
-</h3>
-<table class="table">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr class="header">
-<th>Function Name</th>
-<th>Documentation</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>distrSpec</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/distr_spec.Rd" class="external-link">distr_spec.Rd</a></td>
-<td>User-friendly alias for <code>distr_spec</code>.</td>
-</tr>
-<tr class="even">
-<td><code>simSpec</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/sim_spec.Rd" class="external-link">sim_spec.Rd</a></td>
-<td>Exported simulation specification object.</td>
-</tr>
-<tr class="odd">
-<td><code>add_contamination</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/add_contamination.Rd" class="external-link">add_contamination.Rd</a></td>
-<td>Adds contamination/noise to simulated data.</td>
-</tr>
-<tr class="even">
-<td><code>simulate_IIDdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_IIDdata.Rd" class="external-link">simulate_IIDdata.Rd</a></td>
-<td>Simulates IID data.</td>
-</tr>
-<tr class="odd">
-<td><code>simulate_LMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_LMdata.Rd" class="external-link">simulate_LMdata.Rd</a></td>
-<td>Simulates linear model data.</td>
-</tr>
-<tr class="even">
-<td><code>simulate_LMMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/simulate_LMMdata.Rd" class="external-link">simulate_LMMdata.Rd</a></td>
-<td>Simulates linear mixed model data.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level3">
-<h3 id="plot-methods-for-simulated-data">Plot Methods for Simulated Data<a class="anchor" aria-label="anchor" href="#plot-methods-for-simulated-data"></a>
-</h3>
-<table class="table">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr class="header">
-<th>Function Name</th>
-<th>Documentation</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>plotSimData</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Main plotting function for simulated data objects.</td>
-</tr>
-<tr class="even">
-<td><code>plot.GLMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for GLM simulation output.</td>
-</tr>
-<tr class="odd">
-<td><code>plot.GLMMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for GLMM simulation output.</td>
-</tr>
-<tr class="even">
-<td><code>plot.IIDdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for IID simulation output.</td>
-</tr>
-<tr class="odd">
-<td><code>plot.LMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for LM simulation output.</td>
-</tr>
-<tr class="even">
-<td><code>plot.LMMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for LMM simulation output.</td>
-</tr>
-<tr class="odd">
-<td><code>plot.list</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/plotSimData.Rd" class="external-link">plotSimData.Rd</a></td>
-<td>Plot method for lists of simulated data.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level3">
-<h3 id="print-methods-for-simulated-data">Print Methods for Simulated Data<a class="anchor" aria-label="anchor" href="#print-methods-for-simulated-data"></a>
-</h3>
-<table class="table">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr class="header">
-<th>Function Name</th>
-<th>Documentation</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>printSimData</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd" class="external-link">printSimData.Rd</a></td>
-<td>Main print method for simulated data objects.</td>
-</tr>
-<tr class="even">
-<td><code>print.GLMMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd" class="external-link">printSimData.Rd</a></td>
-<td>Print method for GLMM simulation output.</td>
-</tr>
-<tr class="odd">
-<td><code>print.LMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd" class="external-link">printSimData.Rd</a></td>
-<td>Print method for LM simulation output.</td>
-</tr>
-<tr class="even">
-<td><code>print.LMMdata</code></td>
-<td><a href="https://github.com/abhik-stat/fsimR/blob/master/man/printSimData.Rd" class="external-link">printSimData.Rd</a></td>
-<td>Print method for LMM simulation output.</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>

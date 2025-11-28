@@ -30,25 +30,6 @@ sim_spec(
   include.Zintercept = TRUE,
   ...
 )
-
-simSpec(
-  name = "Setup0",
-  n_subj = 10,
-  n_obs = 5,
-  p = NULL,
-  q = 1,
-  beta_coeff = NULL,
-  SNR = NULL,
-  X = NULL,
-  Z = NULL,
-  is.CorrelatedXZ = FALSE,
-  is.ZInX = FALSE,
-  orthogonalize.X = FALSE,
-  orthogonalize.Z = FALSE,
-  include.Xintercept = TRUE,
-  include.Zintercept = TRUE,
-  ...
-)
 ```
 
 ## Arguments

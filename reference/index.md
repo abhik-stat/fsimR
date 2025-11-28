@@ -4,8 +4,9 @@
 
 - [`add_contamination()`](https://abhik-stat.github.io/fsimR/reference/add_contamination.md)
   : Add Contamination to Simulated Data
+- [`construct_covMatrix()`](https://abhik-stat.github.io/fsimR/reference/construct_covMatrix.md)
+  : Construct Structured Covariance or Correlation Matrices (non-random)
 - [`distr_spec()`](https://abhik-stat.github.io/fsimR/reference/distr_spec.md)
-  [`distrSpec()`](https://abhik-stat.github.io/fsimR/reference/distr_spec.md)
   : Distribution Specification Constructor
 - [`match.fun.allR()`](https://abhik-stat.github.io/fsimR/reference/match.fun.allR.md)
   : Find a Function Across Base R and All Installed R Packages
@@ -21,7 +22,6 @@
   [`print(`*`<LMdata>`*`)`](https://abhik-stat.github.io/fsimR/reference/printSimData.md)
   : Print Simulated Dataset
 - [`sim_spec()`](https://abhik-stat.github.io/fsimR/reference/sim_spec.md)
-  [`simSpec()`](https://abhik-stat.github.io/fsimR/reference/sim_spec.md)
   : Simulation Specification Constructor
 - [`simulate_IIDdata()`](https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.md)
   : Simulate IID Data from a Wide Range of Distributions
