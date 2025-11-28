@@ -18,7 +18,7 @@
 #' Numeric vectors or matrices are treated as IID samples (columns = variables).
 #'
 #'
-#' @param object Numeric vector, matrix, named list, or simulation object
+#' @param x Numeric vector, matrix, named list, or simulation object
 #'    (of class `LMMdata`, `GLMMdata`, `LMdata`, `GLMdata`, `IIDdata`).
 #'    If a list, it must include the components required for the selected `type`.
 #'
@@ -26,6 +26,7 @@
 #'    (LMM/GLMM, LM/GLM only; default `1`).
 #' @param iteration Integer; which iteration within the replication to plot
 #'    (LMM/GLMM, LM/GLM only; default `1`).
+#' @param ... Any additional arguments.
 #'
 #' @details
 #' The function prints:
@@ -63,9 +64,10 @@ NULL
 #' @rdname printSimData
 #' @method print LMMdata
 #' @export
-print.LMMdata <- function(object, replication = 1, iteration = 1) {
+print.LMMdata <- function(x, replication = 1, iteration = 1, ...) {
 
   # Ensure required components exist
+  object <- x
   required <- c("y", "X", "Z", "RE", "sigma_e", "SNR", "ID")
   missing_comp <- setdiff(required, names(object))
   if (length(missing_comp) > 0) {
@@ -194,8 +196,8 @@ print.LMMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname printSimData
 #' @method print GLMMdata
 #' @export
-print.GLMMdata <- function(object, replication = 1, iteration = 1) {
-  print.LMMdata(object, replication, iteration)
+print.GLMMdata <- function(x, replication = 1, iteration = 1, ...) {
+  print.LMMdata(x, replication, iteration, ...)
 }
 
 
@@ -204,9 +206,10 @@ print.GLMMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname printSimData
 #' @method print LMdata
 #' @export
-print.LMdata <- function(object, replication = 1, iteration = 1) {
+print.LMdata <- function(x, replication = 1, iteration = 1, ...) {
 
   # Ensure required components exist
+  object <- x
   required <- c("y", "X", "sigma_e", "SNR")
   missing_comp <- setdiff(required, names(object))
   if (length(missing_comp) > 0) {
@@ -294,7 +297,7 @@ print.LMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname printSimData
 #' @method print GLMMdata
 #' @export
-print.GLMMdata <- function(object, replication = 1, iteration = 1) {
-  print.LMMdata(object, replication, iteration)
+print.GLMMdata <- function(x, replication = 1, iteration = 1,...) {
+  print.LMMdata(x, replication, iteration, ...)
 }
 

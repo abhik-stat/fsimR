@@ -1,4 +1,4 @@
-#' @title Add Contamination to Simulated Data
+#' @title Add Contamination/noises to Simulated Data
 #'
 #' @description
 #' Introduces controlled contamination into simulated datasets.
@@ -60,7 +60,7 @@
 #'       \item "multiplicative": Multiplies values in selected rows/cells by contamination values.
 #'       \item "replace": Replaces values in selected rows/cells with contamination values.
 #'       \item "outlier": Sets selected rows/cells to extreme values of the form:
-#'     \deqn{\text{mean} \pm (\text{sd} \times \text{outlier_factor}).}
+#'     \deqn{mean \pm (sd \times outlier_factor).}
 #'        This generates classical point outliers.
 #'       \item "leverage": Generates high-leverage points in `X` or `Z`.
 #'         Corresponding rows in `y` (if present) are shifted in the opposite direction.
@@ -172,7 +172,6 @@
 #'   )
 #' )
 #'
-#' @importFrom utils modifyList
 #'
 #' @export
 add_contamination <- function(simData,

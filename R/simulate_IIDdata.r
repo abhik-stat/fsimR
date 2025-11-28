@@ -105,7 +105,7 @@
 #' Multivariate Normal        \tab mvnorm, mvn                → [mvtnorm::rmvnorm]   \tab mean = rep(0, dim), sigma = diag(dim)\cr
 #' Multivariate Normal (Singular)   \tab smvnorm, smvn        → [mgcv::rmvn]         \tab mu = rep(0, dim), V = diag(dim)\cr
 #' Multivariate t             \tab mvt                        → [mvtnorm::rmvt]      \tab sigma = diag(dim), df = 5, delta = rep(0, dim)\cr
-#' Multivariate t (Singular)  \tab smvt                       → \link[mgcv]{r.mvnt}  \tab mu = rep(0, dim), V = diag(dim), df = 5\cr
+#' Multivariate t (Singular)  \tab smvt                       → [mgcv::r.mvt]       \tab mu = rep(0, dim), V = diag(dim), df = 5\cr
 #' Skew-normal (univariate)   \tab skewnorm, sn               → [sn::rsn]            \tab xi = 0, omega = 1, alpha = 0, tau = 0\cr
 #' Skew-normal (multivariate) \tab mvsnorm, mvsn              → [sn::rmsn]           \tab xi = alpha = rep(0, dim), Omega = diag(dim), tau = 0 \cr
 #' Skew-t (univariate)        \tab skewt, st                  → [sn::rst]            \tab xi = 0, omega = 1, alpha = 0, nu = 5\cr
@@ -150,17 +150,17 @@
 #'
 #' @references
 #' \itemize{
-#'   \item Azzalini A, Capitanio A (2013). \emph{The Skew-Normal and Related Families} Cambridge University Press. ISBN 978-1-107-02927-9. \url{https://doi.org/10.1017/CBO9781139248891}
-#'   \item Adcock C, Dias A, Salmon M (Eds) (2013). \emph{Copulae & Multivariate Probability Distributions in Finance} Routledge. ISBN 978-0-415-81485-0. \url{https://www.routledge.com/Copulae-and-Multivariate-Probability-Distributions-in-Finance/Adcock-Dias-Salmon/p/book/9780415814850}
-#'   \item Durante F, Sempi C (2015). \emph{Principles of Copula Theory} CRC Press. ISBN 978-1-439-88442-3. \url{https://www.crcpress.com/Principles-of-Copula-Theory/Durante-Sempi/p/book/9781439884423}
-#'   \item Genton MG (Ed) (2004). \emph{Skew-Elliptical Distributions and Their Applications: A Journey Beyond Normality} Chapman & Hall / CRC Press. ISBN 978-0-415-36559-7. \url{https://www.routledge.com/Skew-Elliptical-Distributions-and-Their-Applications-A-Journey-Beyond-Normality/Genton/p/book/9780367578312}
-#'   \item Johnson NL, Kotz S, Balakrishnan N (1994). \emph{Continuous Univariate Distributions, Volume 1} (2nd ed.) Wiley. ISBN 978-0-471-58495-7. \url{https://www.wiley.com/en-us/Continuous+Univariate+Distributions\%2C+Volume+1\%2C+2nd+Edition-p-9780471584957}
-#'   \item Johnson NL, Kotz S, Balakrishnan N (1995). \emph{Continuous Univariate Distributions, Volume 2} (2nd ed.) Wiley. ISBN 978-0-471-58494-0. \url{https://www.wiley.com/en-us/Continuous+Univariate+Distributions\%2C+Volume+2\%2C+2nd+Edition-p-9780471584940}
-#'   \item Johnson NL, Kotz S, Balakrishnan N (1997). \emph{Discrete Multivariate Distributions} Wiley. ISBN 978-0-471-12844-1. \url{https://www.wiley.com/en-us/Discrete+Multivariate+Distributions-p-9780471128441}
-#'   \item Johnson NL, Kotz S, Kemp AW (2005). \emph{Univariate Discrete Distributions} (3rd ed.) Wiley. \url{https://www.wiley.com/en-us/Univariate+Discrete+Distributions\%2C+3rd+Edition-p-9780471712384}
-#'   \item Kotz S, Balakrishnan N, Johnson NL (2000). \emph{Continuous Multivariate Distributions, Volume 1: Models & Applications} (2nd ed.) Wiley. ISBN 978-0-471-18387-7. \url{https://www.wiley.com/en-us/Continuous+Multivariate+Distributions\%2C+Volume+1\%3A+Models+and+Applications-p-9780471183877}
-#'   \item Lai CD, Balakrishnan N (2002). \emph{Continuous Bivariate Distributions} Springer. \url{https://link.springer.com/book/10.1007/b101765}
-#'   \item Nelsen RB (2006). \emph{An Introduction to Copulas} (2nd ed.) Springer. \url{https://link.springer.com/book/10.1007/0-387-28678-0}
+#'   \item Azzalini A, Capitanio A (2013). \emph{The Skew-Normal and Related Families} Cambridge University Press. ISBN 978-1-107-02927-9. \href{https://www.cambridge.org/core/books/skewnormal-and-related-families/4B9A3CD9D58EB6022FC1D21E1E08A10E}{Link}
+#'   \item Adcock C, Dias A, Salmon M (Eds) (2013). \emph{Copulae & Multivariate Probability Distributions in Finance} Routledge. ISBN 978-0-415-81485-0. \href{https://www.routledge.com/Copulae-and-Multivariate-Probability-Distributions-in-Finance/Adcock-Dias-Salmon/p/book/9780415814850}{Link}
+#'   \item Durante F, Sempi C (2015). \emph{Principles of Copula Theory} CRC Press. ISBN 978-1-439-88442-3. \href{https://www.routledge.com/Principles-of-Copula-Theory/Durante-Sempi/p/book/9781439884423}{Link}
+#'   \item Genton MG (Ed) (2004). \emph{Skew-Elliptical Distributions and Their Applications: A Journey Beyond Normality} Chapman & Hall / CRC Press. ISBN 978-0-415-36559-7. \href{https://www.routledge.com/Skew-Elliptical-Distributions-and-Their-Applications-A-Journey-Beyond-Normality/Genton/p/book/9780367578312}{Link}
+#'   \item Johnson NL, Kotz S, Balakrishnan N (1994). \emph{Continuous Univariate Distributions, Volume 1} (2nd ed.) Wiley. ISBN 978-0-471-58495-7. \href{https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+1%2C+2nd+Edition-p-9780471584957}{Link}
+#'   \item Johnson NL, Kotz S, Balakrishnan N (1995). \emph{Continuous Univariate Distributions, Volume 2} (2nd ed.) Wiley. ISBN 978-0-471-58494-0. \href{https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+2%2C+2nd+Edition-p-9780471584940}{Link}
+#'   \item Johnson NL, Kotz S, Balakrishnan N (1997). \emph{Discrete Multivariate Distributions} Wiley. ISBN 978-0-471-12844-1. \href{https://www.wiley.com/en-us/Discrete+Multivariate+Distributions-p-9780471128441}{Link}
+#'   \item Johnson NL, Kotz S, Kemp AW (2005). \emph{Univariate Discrete Distributions} (3rd ed.) Wiley. ISBN 978-0-471-27246-5. \href{https://www.wiley.com/en-us/Univariate+Discrete+Distributions%2C+3rd+Edition-p-9780471272465}{Link}
+#'   \item Kotz S, Balakrishnan N, Johnson NL (2000). \emph{Continuous Multivariate Distributions, Volume 1: Models & Applications} (2nd ed.) Wiley. ISBN 978-0-471-18387-7. \href{https://www.wiley.com/en-us/Continuous+Multivariate+Distributions%2C+Volume+1%3A+Models+and+Applications-p-9780471183877}{Link}
+#'   \item Lai CD, Balakrishnan N (2002). \emph{Continuous Bivariate Distributions} Springer. \href{https://link.springer.com/book/10.1007/b101765}{Link}
+#'   \item Nelsen RB (2006). \emph{An Introduction to Copulas} (2nd ed.) Springer. \href{https://link.springer.com/book/10.1007/0-387-28678-0}{Link}
 #' }
 #'
 #'
@@ -228,12 +228,6 @@
 #'
 #' @seealso [distr_spec()], \code{\link{match.fun.allR}}, [summary.IIDdata], [plot.IIDdata]
 #'
-#' @importFrom MASS rnegbin
-#' @importFrom stats setNames rbinom rpois rnorm runif rgamma rbeta rchisq
-#' @importFrom copula rCopula
-#' @importFrom sn rsn rst rmsn rmst
-#' @importFrom mvtnorm rmvnorm rmvt
-#' @importFrom VGAM rpareto rlaplace
 #'
 #' @export
 simulate_IIDdata <- function(n, distr_name, distr_params = distr_spec(),

@@ -18,7 +18,7 @@
 #'   May be scalars or vectors. Default: \code{rep(0, dim)}.
 #' @param sd,scale,sigma,omega,Omega,V Numeric or matrix.
 #'   Aliases for the *scale* or *covariance* parameter.
-#'   Scalars are expanded to \code{scalar \eqn{\times} I(dim)};
+#'   Scalars are expanded to `scalar` \eqn{\times} `I(dim)`;
 #'   matrices must be square.Default: \code{I(dim)}.
 #' @param alpha Numeric. Slant / skewness parameter.
 #'   May be scalar or vector. Default: \code{rep(0, dim)}.
@@ -224,12 +224,6 @@ distr_spec <- function(
   c(out, list(...))
 }
 
-#' Alias for distr_spec
-#'
-#' @inherit distr_spec
-#' @rdname distr_spec
-#' @export
-distrSpec <- distr_spec
 
 
 
@@ -359,10 +353,6 @@ sim_spec <- function(
 }
 
 
-#' @rdname sim_spec
-#' @export
-simSpec <- sim_spec
-
 
 
 ##=========================================================================================
@@ -465,7 +455,7 @@ match.fun.allR <- function(FUN, descend = TRUE, list_all = FALSE) {
   if (!is.null(f)) return(f)
 
   # Search across all installed R packages
-  pkgs <- installed.packages()[, "Package"]
+  pkgs <- utils::installed.packages()[, "Package"]
   matches <- list()
 
   for (pkg in pkgs) {

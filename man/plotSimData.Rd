@@ -11,7 +11,7 @@
 \title{Plot Simulated Data}
 \usage{
 \method{plot}{LMMdata}(
-  object,
+  x,
   replication = 1,
   iteration = 1,
   type = c("all", "y", "X", "Z", "RE"),
@@ -20,10 +20,10 @@
   ...
 )
 
-\method{plot}{GLMMdata}(object, ...)
+\method{plot}{GLMMdata}(x, ...)
 
 \method{plot}{LMdata}(
-  object,
+  x,
   replication = 1,
   iteration = 1,
   type = c("all", "y", "X"),
@@ -32,14 +32,16 @@
   ...
 )
 
-\method{plot}{GLMdata}(object, ...)
+\method{plot}{GLMdata}(x, ...)
 
-\method{plot}{IIDdata}(data, main = TRUE, plot_args = list(), ...)
+\method{plot}{IIDdata}(x, main = TRUE, plot_args = list(), ...)
 
-\method{plot}{list}(object, ...)
+\method{plot}{list}(x, ...)
 }
 \arguments{
-\item{object}{List containing components y, X, Z, RE (LMM/GLMM) or y, X (LM/GLM).}
+\item{x}{Numeric vector, matrix, named list, or simulation object
+(of class \code{LMMdata}, \code{GLMMdata}, \code{LMdata}, \code{GLMdata}, \code{IIDdata}).
+If a list, it must include the components required for the selected \code{type}.}
 
 \item{replication}{Integer; which replication (dataset) to plot
 (LMM/GLMM, LM/GLM only; default \code{1}).}

@@ -1,4 +1,4 @@
-#' @title Simulate Data from a Linear Mixed Model (LMM)
+#' @title Simulate Data from a Linear Mixed Model
 #' @md
 #'
 #' @description
@@ -199,7 +199,8 @@
 #' # Non-Gaussian error and multivariate random effects
 #' distr_settings <- list(
 #'   error_distr = list(distr_name = "t", distr_params = distr_spec(df = 4)),
-#'   RE_distr    = list(distr_name = "mvnorm", distr_params = list(dim = 2, sigma = diag(2)))
+#'   RE_distr    = list(distr_name = "mvnorm",
+#'                 distr_params = list(dim = 2, sigma = diag(2)))
 #' )
 #' sim <- simulate_LMMdata(
 #'   n_rep = 1,
@@ -221,6 +222,8 @@
 #'   include.Xintercept = TRUE,
 #'   include.Zintercept = TRUE
 #' )
+#' if (requireNamespace("copula", quietly = TRUE)) {
+#'
 #' distr_settings <- list(
 #'   X_distr  = list(distr_name = "mvnorm", distr_params = list(sigma = Sigma_X)),
 #'   Z_distr  = list(distr_name = "mvnorm", distr_params = list(sigma = Sigma_Z)),
@@ -228,17 +231,20 @@
 #' )
 #' sim <- simulate_LMMdata(sim_settings = sim_settings, distr_settings = distr_settings)
 #' pairs(cbind(sim$X, sim$Z), main = "Correlated X predictors")
+#' }
 #'
 #'
 #' # User-supplied design matrices
 #' n_subj <- 5; n_obs <- 6; n <- n_subj * n_obs
 #' X_user <- matrix(rnorm(n*3), ncol=3)
 #' Z_user <- matrix(rnorm(n*2), ncol=2)
-#' sim_settings <- sim_spec(n_subj = n_subj, n_obs = n_obs, X = X_user, Z = Z_user, beta_coeff = c(1,0.5,-1))
+#' sim_settings <- sim_spec(n_subj = n_subj, n_obs = n_obs,
+#'                          X = X_user, Z = Z_user, beta_coeff = c(1,0.5,-1))
 #' sim <- simulate_LMMdata(sim_settings = sim_settings)
 #'
 #'
 #' # Copula-based generation
+#' if (requireNamespace("copula", quietly = TRUE)) {
 #' library(copula)
 #' normal_cop <- normalCopula(param = 0.6, dim = 2)
 #' distr_settings <- list(
@@ -256,7 +262,7 @@
 #' sim <- simulate_LMMdata(sim_settings = sim_spec(n_subj = 10, n_obs = 3),
 #'                          distr_settings = distr_settings)
 #' plot(sim$X[,2:3], main = "X from Copula-based distribution")
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{simulate_IIDdata}}, \code{\link{distr_spec}}, \code{\link{sim_spec}}.

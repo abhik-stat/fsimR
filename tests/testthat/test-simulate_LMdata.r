@@ -161,6 +161,7 @@ test_that("simulate.LMdata() supports non-normal errors", {
   expect_equal(length(sim6$y), 20)
   expect_true(is.numeric(sim6$y))
   expect_false(any(is.na(sim6$y)))
+  skip_if_not_installed("e1071")
   expect_true(abs(e1071::skewness(as.vector(sim6$y))) < 2)
 })
 

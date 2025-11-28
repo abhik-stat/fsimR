@@ -2,45 +2,9 @@
 % Please edit documentation in R/specifications.r
 \name{distr_spec}
 \alias{distr_spec}
-\alias{distrSpec}
 \title{Distribution Specification Constructor}
 \usage{
 distr_spec(
-  dim = 1,
-  mean = NULL,
-  mu = NULL,
-  location = NULL,
-  xi = NULL,
-  sd = NULL,
-  scale = NULL,
-  sigma = NULL,
-  omega = NULL,
-  Omega = NULL,
-  V = NULL,
-  alpha = NULL,
-  lambda = 1,
-  rate = 1,
-  df = 5,
-  nu = 5,
-  df1 = 5,
-  df2 = 5,
-  ncp = 0,
-  shape = 1,
-  shape1 = 1,
-  shape2 = 1,
-  size = 1,
-  prob = 0.5,
-  meanlog = 0,
-  sdlog = 1,
-  min = 0,
-  max = 1,
-  copula = NULL,
-  margins = NULL,
-  generator = NULL,
-  ...
-)
-
-distrSpec(
   dim = 1,
   mean = NULL,
   mu = NULL,
@@ -84,7 +48,7 @@ May be scalars or vectors. Default: \code{rep(0, dim)}.}
 
 \item{sd, scale, sigma, omega, Omega, V}{Numeric or matrix.
 Aliases for the \emph{scale} or \emph{covariance} parameter.
-Scalars are expanded to \code{scalar \eqn{\times} I(dim)};
+Scalars are expanded to \code{scalar} \eqn{\times} \code{I(dim)};
 matrices must be square.Default: \code{I(dim)}.}
 
 \item{alpha}{Numeric. Slant / skewness parameter.

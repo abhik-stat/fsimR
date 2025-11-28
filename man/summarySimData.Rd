@@ -7,26 +7,20 @@
 \alias{summary.LMdata}
 \alias{summary.GLMdata}
 \alias{summary.IIDdata}
-\alias{summary.numeric}
-\alias{summary.matrix}
 \alias{summary.list}
 \title{Summarize Simulated Data}
 \usage{
-\method{summary}{LMMdata}(object, replication = 1, iteration = 1)
+\method{summary}{LMMdata}(object, replication = 1, iteration = 1, ...)
 
-\method{summary}{GLMMdata}(object, replication = 1, iteration = 1)
+\method{summary}{GLMMdata}(object, replication = 1, iteration = 1, ...)
 
-\method{summary}{LMdata}(object, replication = 1, iteration = 1)
+\method{summary}{LMdata}(object, replication = 1, iteration = 1, ...)
 
-\method{summary}{GLMdata}(object, replication = 1, iteration = 1)
+\method{summary}{GLMdata}(object, replication = 1, iteration = 1, ...)
 
-\method{summary}{IIDdata}(data)
+\method{summary}{IIDdata}(object, ...)
 
-\method{summary}{numeric}(object)
-
-\method{summary}{matrix}(object)
-
-\method{summary}{list}(object, replication = 1, iteration = 1)
+\method{summary}{list}(object, replication = 1, iteration = 1, ...)
 }
 \arguments{
 \item{object}{Numeric vector, matrix, named list, or simulation object
@@ -38,6 +32,8 @@ If a list, it must include the components required for the selected \code{type}.
 
 \item{iteration}{Integer; which iteration within the replication to plot
 (LMM/GLMM, LM/GLM only; default \code{1}).}
+
+\item{...}{Any additional arguments.}
 }
 \value{
 Invisibly returns a numeric matrix of computed summary statistics:

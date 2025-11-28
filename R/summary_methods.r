@@ -27,6 +27,7 @@
 #'    (LMM/GLMM, LM/GLM only; default `1`).
 #' @param iteration Integer; which iteration within the replication to plot
 #'    (LMM/GLMM, LM/GLM only; default `1`).
+#' @param ... Any additional arguments.
 #'
 #'
 #' @details
@@ -82,7 +83,7 @@ NULL
 #' @rdname summarySimData
 #' @method summary LMMdata
 #' @export
-summary.LMMdata <- function(object, replication = 1, iteration = 1) {
+summary.LMMdata <- function(object, replication = 1, iteration = 1, ...) {
 
   # Ensure required components exist
   required <- c("y", "X", "Z", "RE", "sigma_e", "SNR", "ID")
@@ -214,8 +215,8 @@ summary.LMMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname summarySimData
 #' @method summary GLMMdata
 #' @export
-summary.GLMMdata <- function(object, replication = 1, iteration = 1) {
-  summary.LMMdata(object, replication, iteration)
+summary.GLMMdata <- function(object, replication = 1, iteration = 1, ...) {
+  summary.LMMdata(object, replication, iteration, ...)
 }
 
 
@@ -224,7 +225,7 @@ summary.GLMMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname summarySimData
 #' @method summary LMdata
 #' @export
-summary.LMdata <- function(object, replication = 1, iteration = 1) {
+summary.LMdata <- function(object, replication = 1, iteration = 1, ...) {
 
   # Ensure required components exist
   required <- c("y", "X", "sigma_e", "SNR")
@@ -312,8 +313,8 @@ summary.LMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname summarySimData
 #' @method summary GLMdata
 #' @export
-summary.GLMdata <- function(object, replication = 1, iteration = 1) {
-  summary.LMdata(object, replication, iteration)
+summary.GLMdata <- function(object, replication = 1, iteration = 1, ...) {
+  summary.LMdata(object, replication, iteration, ...)
 }
 
 
@@ -321,11 +322,11 @@ summary.GLMdata <- function(object, replication = 1, iteration = 1) {
 #' @rdname summarySimData
 #' @method summary IIDdata
 #' @export
-summary.IIDdata <- function(data) {
+summary.IIDdata <- function(object, ...) {
 
 
   # format data suitably
-  data <- as.matrix(data)
+  data <- as.matrix(object)
   n <- nrow(data)
   d <- ncol(data)
   if(is.null(colnames(data))) colnames(data) <- paste0("X", 1:d)
@@ -363,33 +364,16 @@ summary.IIDdata <- function(data) {
 
 # =========== Summary method for Other classes ================
 
-# Numeric wrapper -> IIDdata
-#' @rdname summarySimData
-#' @method summary numeric
-#' @export
-summary.numeric  <- function(object) {
-  summary.IIDdata(object)
-}
-
-
-# Matrix wrapper -> IIDdata
-#' @rdname summarySimData
-#' @method summary matrix
-#' @export
-summary.matrix  <- function(object) {
-  summary.IIDdata(object)
-}
-
 
 # List wrapper
 #' @rdname summarySimData
 #' @method summary list
 #' @export
-summary.list <- function(object, replication = 1, iteration = 1) {
+summary.list <- function(object, replication = 1, iteration = 1, ...) {
   if (all(c("y","X","Z","RE") %in% names(object))) {
-    summary.LMMdata(object, replication = 1, iteration = 1)
+    summary.LMMdata(object, replication = 1, iteration = 1, ...)
   } else if (all(c("y","X") %in% names(object))) {
-    summary.LMdata(object, replication = 1, iteration = 1)
+    summary.LMdata(object, replication = 1, iteration = 1, ...)
   } else {
     stop("Cannot determine summary method for this list. Ensure it contains valid components.")
   }

@@ -152,14 +152,13 @@
 #' # Non-Gaussian error and multivariate predictors
 #' distr_settings <- list(
 #'   error_distr = list(distr_name = "t", distr_params = distr_spec(df = 4)),
-#'   X_distr    = list(distr_name = "mvnorm", distr_params = list(dim = 2, sigma = diag(2)))
+#'   X_distr    = list(distr_name = "mvtnorm::rmvnorm", distr_params = list(dim = 2, sigma = diag(2)))
 #' )
 #' sim <- simulate_LMdata(
 #'   n_rep = 1,
 #'   sim_settings = sim_spec(n_subj = 15),
 #'   distr_settings = distr_settings
 #' )
-#'
 #'
 #' # User-supplied design matrices
 #' n_subj <- 10
@@ -172,6 +171,7 @@
 #'
 #'
 #' # Copula-based generation
+#' if (requireNamespace("copula", quietly = TRUE)) {
 #' library(copula)
 #' normal_cop <- normalCopula(param = 0.6, dim = 2)
 #' distr_settings <- list(
@@ -189,7 +189,7 @@
 #' sim <- simulate_LMdata(sim_settings = sim_spec(n_subj = 10),
 #'                          distr_settings = distr_settings)
 #' plot(sim$X[,2:3], main = "X from Copula-based distribution")
-#'
+#' }
 #'
 #' @seealso
 #' \code{\link{simulate_IIDdata}}, \code{\link{distr_spec}}, \code{\link{sim_spec}}.

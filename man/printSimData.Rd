@@ -7,16 +7,16 @@
 \alias{print.LMdata}
 \title{Print Simulated Dataset}
 \usage{
-\method{print}{LMMdata}(object, replication = 1, iteration = 1)
+\method{print}{LMMdata}(x, replication = 1, iteration = 1, ...)
 
-\method{print}{GLMMdata}(object, replication = 1, iteration = 1)
+\method{print}{GLMMdata}(x, replication = 1, iteration = 1, ...)
 
-\method{print}{LMdata}(object, replication = 1, iteration = 1)
+\method{print}{LMdata}(x, replication = 1, iteration = 1, ...)
 
-\method{print}{GLMMdata}(object, replication = 1, iteration = 1)
+\method{print}{GLMMdata}(x, replication = 1, iteration = 1, ...)
 }
 \arguments{
-\item{object}{Numeric vector, matrix, named list, or simulation object
+\item{x}{Numeric vector, matrix, named list, or simulation object
 (of class \code{LMMdata}, \code{GLMMdata}, \code{LMdata}, \code{GLMdata}, \code{IIDdata}).
 If a list, it must include the components required for the selected \code{type}.}
 
@@ -25,6 +25,8 @@ If a list, it must include the components required for the selected \code{type}.
 
 \item{iteration}{Integer; which iteration within the replication to plot
 (LMM/GLMM, LM/GLM only; default \code{1}).}
+
+\item{...}{Any additional arguments.}
 }
 \description{
 Prints a dataset from a simulation object, showing metadata and actual data.

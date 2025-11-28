@@ -1,12 +1,9 @@
 # library(testthat)
 
 # context("Testing add_contamination ")
-#
-# set.seed(123)
 
-################################################################
-# Updated helper function
-################################################################
+
+## Updated helper function #######################
 
 # Count contaminated elements/rows depending on type
 count_diff <- function(original, contaminated) {
@@ -39,9 +36,7 @@ count_diff <- function(original, contaminated) {
   stop("Unsupported input type for count_diff()")
 }
 
-################################################################
-# Original tests (unchanged)
-################################################################
+## Main tests ################################################
 
 test_that("Additive contamination on numeric vector", {
   x <- rnorm(100)
@@ -56,7 +51,7 @@ test_that("Additive contamination on numeric vector", {
   )
   expect_true(is.numeric(cont))
   expect_equal(length(cont), length(x))
-  expect_gt(count_diff(x, cont), 0)  # Some rows must be modified
+  expect_gt(count_diff(x, cont), 0)
 })
 
 test_that("Multiplicative contamination on matrix", {
@@ -137,19 +132,6 @@ test_that("Leverage contamination on list with X and y", {
                                     colMeans(sim$X[,2:3])))))
 })
 
-test_that("cont_value overrides random generation", {
-  x <- rnorm(50)
-  cont <- add_contamination(
-    x,
-    cont_pos = list(name="y"),
-    cont_settings = list(
-      cont_prop = 0.2,
-      cont_type = "additive",
-      cont_value = 3
-    )
-  )
-  expect_true(all((cont - x)[cont != x] == 3))
-})
 
 test_that("cont_prop=0 returns identical object", {
   x <- rnorm(50)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_contamination.r
 \name{add_contamination}
 \alias{add_contamination}
-\title{Add Contamination to Simulated Data}
+\title{Add Contamination/noises to Simulated Data}
 \usage{
 add_contamination(simData, cont_pos = list(), cont_settings = list())
 }
@@ -55,7 +55,7 @@ The default is the standard normal distribution.}
 \item "multiplicative": Multiplies values in selected rows/cells by contamination values.
 \item "replace": Replaces values in selected rows/cells with contamination values.
 \item "outlier": Sets selected rows/cells to extreme values of the form:
-\deqn{\text{mean} \pm (\text{sd} \times \text{outlier_factor}).}
+\deqn{mean \pm (sd \times outlier_factor).}
 This generates classical point outliers.
 \item "leverage": Generates high-leverage points in \code{X} or \code{Z}.
 Corresponding rows in \code{y} (if present) are shifted in the opposite direction.
@@ -181,5 +181,6 @@ cont_cell <- add_contamination(
     cont_mode="cellwise"
   )
 )
+
 
 }

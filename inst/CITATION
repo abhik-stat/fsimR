@@ -1,0 +1,12 @@
+citHeader("To cite package 'fsimR' in publications, please use:")
+
+bibentry(
+  bibtype = "Misc",
+  title   = "fsimR: Flexible Simulation from Statistical Models in R",
+  author  = person("Abhik", "Ghosh", email = "abhik.ghosh.stat@gmail.com"),
+  year    = "2025",
+  note    = "R package version 0.1.0",
+  url     = "https://github.com/abhik-stat/fsimR"
+)
+
+citHeader("Additional references for algorithms or methods used in fsimR can be added below:")

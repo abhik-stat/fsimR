@@ -1,10 +1,18 @@
-^.*\.Rproj$
+^.*\.Rproj$          # RStudio project files
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
-^doc$
-^Meta$
+^\.Rhistory$         # R history files
+^\.RData$            # workspace image
+^\.git$              # Git folder
+^\.gitignore$        # Git ignore file
+^README\.html$       # HTML version of README (if present)
 ^_pkgdown\.yml$
-^docs$
+^doc$
+^docs/               # optional docs folder if you generate HTML reports
+^Meta$
+^\.vscode/           # VSCode project settings
+^\.DS_Store$         # macOS file
+^Thumbs\.db$         # Windows file
 ^pkgdown$
 ^\.github$

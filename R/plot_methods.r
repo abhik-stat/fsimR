@@ -40,7 +40,7 @@
          breaks = plot_args$breaks,
          main = if (main) main_text else "",
          cex.axis = plot_args$cex_axis,
-         ylim = c(0, ymax),
+         ylim = c(0, ymax), xlab = "",
          ...)
 
     # Add density curve
@@ -64,6 +64,9 @@
       d <- density(x_vec)
       lines(d$x, d$y / max(d$y), col = plot_args$dens_col, lwd = plot_args$dens_lwd)
     }
+    # Draw axes without labels (optional)
+    axis(1, labels = FALSE)  # x-axis ticks only
+    axis(2, labels = FALSE)  # y-axis ticks only
   }
 }
 
@@ -285,7 +288,7 @@
 #'
 #' For plot types and layout, see Details.
 #'
-#' @param object Numeric vector, matrix, named list, or simulation object
+#' @param x Numeric vector, matrix, named list, or simulation object
 #'    (of class `LMMdata`, `GLMMdata`, `LMdata`, `GLMdata`, `IIDdata`).
 #'    If a list, it must include the components required for the selected `type`.
 #'
@@ -367,7 +370,10 @@
 #'
 #' }
 #'
+#' @importFrom utils modifyList
 #' @importFrom graphics axis box hist lines mtext pairs panel.smooth par plot.new rect strwidth text title
+#' @importFrom stats cor cor.test density median quantile rnorm runif sd toeplitz var
+#'
 #' @name plotSimData
 NULL
 
@@ -377,7 +383,7 @@ NULL
 #' @rdname plotSimData
 #' @method plot LMMdata
 #' @export
-plot.LMMdata <- function(object, replication = 1, iteration = 1,
+plot.LMMdata <- function(x, replication = 1, iteration = 1,
                          type = c("all", "y", "X", "Z", "RE"),
                          main = TRUE,
                          plot_args = list(), ...) {
@@ -400,6 +406,7 @@ plot.LMMdata <- function(object, replication = 1, iteration = 1,
 
   # Merge user-provided args
   plot_args <- modifyList(default_args, plot_args)
+  object <- x
 
   # Save current graphics parameters and restore at exit
   oldpar <- par(no.readonly = TRUE)
@@ -463,7 +470,7 @@ plot.LMMdata <- function(object, replication = 1, iteration = 1,
 #' @rdname plotSimData
 #' @method plot GLMMdata
 #' @export
-plot.GLMMdata <- function(object, ...) plot.LMMdata(object, ...)
+plot.GLMMdata <- function(x, ...) plot.LMMdata(x, ...)
 
 
 
@@ -471,7 +478,7 @@ plot.GLMMdata <- function(object, ...) plot.LMMdata(object, ...)
 #' @rdname plotSimData
 #' @method plot LMdata
 #' @export
-plot.LMdata <- function(object, replication = 1, iteration = 1,
+plot.LMdata <- function(x, replication = 1, iteration = 1,
                          type = c("all", "y", "X"),
                          main = TRUE,
                          plot_args = list(), ...) {
@@ -494,6 +501,7 @@ plot.LMdata <- function(object, replication = 1, iteration = 1,
 
   # Merge user-provided args
   plot_args <- modifyList(default_args, plot_args)
+  object <- x
 
   # Save current graphics parameters and restore at exit
   oldpar <- par(no.readonly = TRUE)
@@ -543,7 +551,7 @@ plot.LMdata <- function(object, replication = 1, iteration = 1,
 #' @rdname plotSimData
 #' @method plot GLMdata
 #' @export
-plot.GLMdata <- function(object, ...) plot.LMdata(object, ...)
+plot.GLMdata <- function(x, ...) plot.LMdata(x, ...)
 
 
 
@@ -551,12 +559,11 @@ plot.GLMdata <- function(object, ...) plot.LMdata(object, ...)
 # =========== Plot method for IIDdata objects ================
 #' @rdname plotSimData
 #' @method plot IIDdata
-#' @param object Numeric matrix or data frame of IID samples.
 #' @export
-plot.IIDdata <- function(data, main = TRUE, plot_args = list(), ...) {
+plot.IIDdata <- function(x, main = TRUE, plot_args = list(), ...) {
 
   # format data suitably
-  data <- as.matrix(data)
+  data <- as.matrix(x)
   n <- nrow(data)
   d <- ncol(data)
   if(is.null(colnames(data))) colnames(data) <- paste0("X", 1:d)
@@ -602,13 +609,12 @@ plot.IIDdata <- function(data, main = TRUE, plot_args = list(), ...) {
 # List wrapper
 #' @rdname plotSimData
 #' @method plot list
-#' @param object List containing components y, X, Z, RE (LMM/GLMM) or y, X (LM/GLM).
 #' @export
-plot.list <- function(object, ...) {
-  if (all(c("y","X","Z","RE") %in% names(object))) {
-    plot.LMMdata(object, ...)
-  } else if (all(c("y","X") %in% names(object))) {
-    plot.LMdata(object, ...)
+plot.list <- function(x, ...) {
+  if (all(c("y","X","Z","RE") %in% names(x))) {
+    plot.LMMdata(x, ...)
+  } else if (all(c("y","X") %in% names(x))) {
+    plot.LMdata(x, ...)
   } else {
     stop("Cannot determine plot method for this list. Ensure it contains valid components.")
   }

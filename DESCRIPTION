@@ -1,44 +1,43 @@
 Package: fsimR
 Type: Package
-Title: Flexible Simulation from Statistical Models in R
+Title: fsimR: Flexible Simulation from Statistical Models in R
 Version: 0.1.0
 Authors@R: 
     person("Abhik", "Ghosh", email = "abhik.ghosh.stat@gmail.com",
            role = c("aut", "cre"))
 Description: 
-    fsimR provides  a unified flexible framework for simulating datasets 
-    from various statistical models, along with summarizing, printing and visualizing 
-    simulated data. 
+    This R package provides  a unified flexible framework for simulating data 
+    from a wide range of structured statistical models with ease of control. 
     The package support generation of independent and identically 
     distributed (IID) data under a variety of distributions, including user-defined 
     generators and copula-based multivariate sampling. It also includes 
-    functions for generating data under linear models, generalized linear models, 
-    mixed-effects models, and many more, with customizable covariate distributions, 
-    regression coefficients, and error structures. The package is designed to support 
-    reproducible simulation studies, teaching, benchmarking, and Monte Carlo experiments. 
-    Its consistent interface and tidyverse-friendly design make it easy to extend 
-    and integrate into larger statistical workflows.
-License: CC BY 4.0 + file LICENSE
+    functions for generating data from different regression and mixed-effects models, 
+    with customizable covariate distributions and error structures. 
+    It also allows summarizing, printing and visualizing simulated data,
+    as well as adding artificial contamination or censoring of various types. 
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 4.0.0)
 Imports:
     stats,
-    MASS,
-    methods,
-    graphics,
-    utils,
-    sn,
-    VGAM,
-    e1071,
-    mvtnorm
+    graphics
 Suggests:
     testthat (>= 3.0.0),
-    copula,
-    SimDesign,
+    utils,
     mvtnorm,
+    MASS,
+    grDevices,
+    copula,
+    sn,
+    VGAM,
+    extraDistr,
+    Matrix,
+    mgcv,
+    dplyr,
     knitr,
+    e1071,
     rmarkdown
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

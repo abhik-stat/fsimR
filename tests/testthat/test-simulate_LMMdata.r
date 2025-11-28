@@ -98,6 +98,7 @@ test_that("simulate_LMMdata supports non-Gaussian error distributions", {
   expect_true(is.numeric(sim$y))
   expect_false(any(is.na(sim$y)))
   # Check for heavier tails than normal
+  skip_if_not_installed("e1071")
   expect_true(abs(e1071::skewness(as.vector(sim$y))) < 2)
 })
 
@@ -201,7 +202,9 @@ test_that("simulate_LMMdata orthogonalizes X and Z when requested", {
 
 
 test_that("simulate_LMMdata handles copula-based X", {
-  normal_cop <- normalCopula(param = 0.6, dim = 2)
+  if (requireNamespace("copula", quietly = TRUE))
+    skip("Required package 'copula' is not installed.")
+  normal_cop <- copula::normalCopula(param = 0.6, dim = 2)
   distr_settings <- list(
     X_distr = list(
       distr_name = "copula",
