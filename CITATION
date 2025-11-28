@@ -3,7 +3,7 @@ citHeader("To cite package 'fsimR' in publications, please use:")
 
 citEntry(
   entry = "Software",
-  title = "fsimR: Flexible Simulation from Structured Statistical Models in R",
+  title = "fsimR: Flexible Simulation from Statistical Models in R",
   author = person("Abhik", "Ghosh", email = "abhik.ghosh.stat@gmail.com"),
   year = 2025,
   version = "0.1.0",
