@@ -72,34 +72,32 @@
 </h3>
 <table class="table">
 <colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
+<col width="50%">
+<col width="50%">
 </colgroup>
 <thead><tr class="header">
 <th>Function Name</th>
-<th>Documentation</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>construct_covMat</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/construct_covMat.html"><code>construct_covMat.Rd</code></a></td>
-<td>Construct Structured Covariance or Correlation Matrices (non-random)</td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/construct_covMat.html"><code>construct_covMat</code></a></td>
+<td>Construct Structured Covariance or Correlation Matrices (non-random).</td>
 </tr>
 <tr class="even">
-<td><code>match.fun.allR</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html"><code>match.fun.allR.Rd</code></a></td>
-<td>Find a Function Across Base R and All Installed R Packages.</td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/construct_designMat.html"><code>construct_designMat</code></a></td>
+<td>Construct Design Matrix from Specified Formula.</td>
 </tr>
 <tr class="odd">
-<td><code>distr_spec</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/distr_spec.html"><code>distr_spec.Rd</code></a></td>
-<td>Distribution Specification Constructor.</td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html"><code>match.fun.allR</code></a></td>
+<td>Find a Function Across Base R and All Installed R Packages.</td>
 </tr>
 <tr class="even">
-<td><code>sim_spec</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/sim_spec.html"><code>sim_spec.Rd</code></a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/distr_spec.html"><code>distr_spec</code></a></td>
+<td>Distribution Specification Constructor.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://abhik-stat.github.io/fsimR/reference/sim_spec.html"><code>sim_spec</code></a></td>
 <td>Simulation Specification Constructor.</td>
 </tr>
 </tbody>
@@ -110,35 +108,45 @@
 </h3>
 <table class="table">
 <colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
+<col width="50%">
+<col width="50%">
 </colgroup>
 <thead><tr class="header">
 <th>Function Name</th>
-<th>Documentation</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>add_contamination</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/add_contamination.html">add_contamination.Rd</a></td>
-<td>Add Contamination/noises to Simulated Data.</td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/add_censoring.html"><code>add_censoring</code></a></td>
+<td>Add Censoring to Simulated Data.</td>
 </tr>
 <tr class="even">
-<td><code>simulate_IIDdata</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.html">simulate_IIDdata.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/add_contamination.html"><code>add_contamination</code></a></td>
+<td>Add Contamination/noises to Simulated Data.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://abhik-stat.github.io/fsimR/reference/add_sparsity.html"><code>add_sparsity</code></a></td>
+<td>Add Specified Sparsity Structure to a Matrix.</td>
+</tr>
+<tr class="even">
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.html"><code>simulate_IIDdata</code></a></td>
 <td>Simulate IID Data from a Wide Range of Univariate and Multivariate Distributions.</td>
 </tr>
 <tr class="odd">
-<td><code>simulate_LMdata</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.html">simulate_LMdata.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.html"><code>simulate_LMdata</code></a></td>
 <td>Simulate Data from a Linear Regression Model.</td>
 </tr>
 <tr class="even">
-<td><code>simulate_LMMdata</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.html">simulate_LMMdata.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.html"><code>simulate_LMMdata</code></a></td>
 <td>Simulate Data from a Linear Mixed Model.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_GLMdata.html"><code>simulate_GLMdata</code></a></td>
+<td>Simulate Data from a Generalized Linear Model.</td>
+</tr>
+<tr class="even">
+<td><a href="https://abhik-stat.github.io/fsimR/reference/simulate_GLMMdata.html"><code>simulate_GLMMdata</code></a></td>
+<td>Simulate Data from a Generalized Linear Mixed Model.</td>
 </tr>
 </tbody>
 </table>
@@ -148,34 +156,28 @@
 </h3>
 <table class="table">
 <colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
+<col width="50%">
+<col width="50%">
 </colgroup>
 <thead><tr class="header">
 <th>Function Name</th>
-<th>Documentation</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>as.&lt;class&gt;</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/asClass.html">asClass.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/asClass.html"><code>as.&lt;class&gt;</code></a></td>
 <td>Coercion into package-specific classes.</td>
 </tr>
 <tr class="even">
-<td><code>plot</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/plotSimData.html">plotSimData.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/plotSimData.html"><code>plot</code></a></td>
 <td>Plot simulated data objects.</td>
 </tr>
 <tr class="odd">
-<td><code>print</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/printSimData.html">printSimData.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/printSimData.html"><code>print</code></a></td>
 <td>Print simulated data objects.</td>
 </tr>
 <tr class="even">
-<td><code>summary</code></td>
-<td><a href="https://abhik-stat.github.io/fsimR/reference/summarySimData.html">summarySimData.Rd</a></td>
+<td><a href="https://abhik-stat.github.io/fsimR/reference/summarySimData.html"><code>summary</code></a></td>
 <td>Summarize simulated data objects.</td>
 </tr>
 </tbody>
