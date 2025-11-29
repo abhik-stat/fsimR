@@ -38,13 +38,12 @@ The `fsimR` package provides the following functions.
 
 ### Helper Functions
 
-| Function Name                                                                               | Documentation                                                                   | Description                             |
-|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|-----------------------------------------|
-| [`construct_covMat.Rd`](https://abhik-stat.github.io/fsimR/reference/construct_covMat.html) | Construct Structured Covariance or Correlation Matrices (non-random)            |                                         |
-| [`match.fun.allR.Rd`](https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html)     | Find a Function Across Base R and All Installed R Packages.                     |                                         |
-| `distr_spec`                                                                                | [`distr_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/distr_spec.html) | Distribution Specification Constructor. |
-| `sim_spec`                                                                                  | [`sim_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/sim_spec.html)     | Simulation Specification Constructor.   |
-| `match.fun.allR`                                                                            |                                                                                 |                                         |
+| Function Name      | Documentation                                                                               | Description                                                          |
+|--------------------|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| `construct_covMat` | [`construct_covMat.Rd`](https://abhik-stat.github.io/fsimR/reference/construct_covMat.html) | Construct Structured Covariance or Correlation Matrices (non-random) |
+| `match.fun.allR`   | [`match.fun.allR.Rd`](https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html)     | Find a Function Across Base R and All Installed R Packages.          |
+| `distr_spec`       | [`distr_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/distr_spec.html)             | Distribution Specification Constructor.                              |
+| `sim_spec`         | [`sim_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/sim_spec.html)                 | Simulation Specification Constructor.                                |
 
 ### Main Simulation Functions
 
