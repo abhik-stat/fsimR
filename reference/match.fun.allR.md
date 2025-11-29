@@ -74,7 +74,7 @@ version, `getNamespace`, `getExportedValue`
 # Base R function
 f1 <- match.fun.allR("rnorm")
 f1(5)
-#> [1] -0.79979606 -1.12798602 -1.02501605  0.07107173  0.38171116
+#> [1] -0.98100611 -0.06278781 -0.39200195  0.66962381 -0.79490005
 
 # Function from installed package (if sn is installed)
 if (requireNamespace("sn", quietly = TRUE)) {
@@ -82,7 +82,7 @@ if (requireNamespace("sn", quietly = TRUE)) {
   f3 <- match.fun.allR("sn::rsn")   # explicit package reference
   f2(5); f3(5)
 }
-#> [1] -0.3461712 -0.8895917 -1.1954751  1.2147301 -0.3022460
+#> [1]  0.7895150  1.1980759  0.3558196 -1.1509771  0.7617545
 #> attr(,"family")
 #> [1] "SN"
 #> attr(,"parameters")

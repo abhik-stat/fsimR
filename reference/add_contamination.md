@@ -1,4 +1,4 @@
-# Add Contamination to Simulated Data
+# Add Contamination/noises to Simulated Data
 
 Introduces controlled contamination into simulated datasets.
 Contamination can be applied to:
@@ -106,9 +106,8 @@ add_contamination(simData, cont_pos = list(), cont_settings = list())
         contamination values.
 
       - "outlier": Sets selected rows/cells to extreme values of the
-        form: \$\$\text{mean} \pm (\text{sd} \times
-        \text{outlier_factor}).\$\$ This generates classical point
-        outliers.
+        form: \$\$mean \pm (sd \times outlier_factor).\$\$ This
+        generates classical point outliers.
 
       - "leverage": Generates high-leverage points in `X` or `Z`.
         Corresponding rows in `y` (if present) are shifted in the
@@ -230,4 +229,5 @@ cont_cell <- add_contamination(
     cont_mode="cellwise"
   )
 )
+
 ```

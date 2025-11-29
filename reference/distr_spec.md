@@ -64,7 +64,7 @@ distr_spec(
 - sd, scale, sigma, omega, Omega, V:
 
   Numeric or matrix. Aliases for the *scale* or *covariance* parameter.
-  Scalars are expanded to `scalar \(\times\) I(dim)`; matrices must be
+  Scalars are expanded to `scalar` \\\times\\ `I(dim)`; matrices must be
   square.Default: `I(dim)`.
 
 - alpha:

@@ -29,7 +29,7 @@ For plot types and layout, see Details.
 ``` r
 # S3 method for class 'LMMdata'
 plot(
-  object,
+  x,
   replication = 1,
   iteration = 1,
   type = c("all", "y", "X", "Z", "RE"),
@@ -39,11 +39,11 @@ plot(
 )
 
 # S3 method for class 'GLMMdata'
-plot(object, ...)
+plot(x, ...)
 
 # S3 method for class 'LMdata'
 plot(
-  object,
+  x,
   replication = 1,
   iteration = 1,
   type = c("all", "y", "X"),
@@ -53,20 +53,22 @@ plot(
 )
 
 # S3 method for class 'GLMdata'
-plot(object, ...)
+plot(x, ...)
 
 # S3 method for class 'IIDdata'
-plot(data, main = TRUE, plot_args = list(), ...)
+plot(x, main = TRUE, plot_args = list(), ...)
 
 # S3 method for class 'list'
-plot(object, ...)
+plot(x, ...)
 ```
 
 ## Arguments
 
-- object:
+- x:
 
-  List containing components y, X, Z, RE (LMM/GLMM) or y, X (LM/GLM).
+  Numeric vector, matrix, named list, or simulation object (of class
+  `LMMdata`, `GLMMdata`, `LMdata`, `GLMdata`, `IIDdata`). If a list, it
+  must include the components required for the selected `type`.
 
 - replication:
 

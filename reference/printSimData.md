@@ -26,21 +26,21 @@ variables).
 
 ``` r
 # S3 method for class 'LMMdata'
-print(object, replication = 1, iteration = 1)
+print(x, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'GLMMdata'
-print(object, replication = 1, iteration = 1)
+print(x, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'LMdata'
-print(object, replication = 1, iteration = 1)
+print(x, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'GLMMdata'
-print(object, replication = 1, iteration = 1)
+print(x, replication = 1, iteration = 1, ...)
 ```
 
 ## Arguments
 
-- object:
+- x:
 
   Numeric vector, matrix, named list, or simulation object (of class
   `LMMdata`, `GLMMdata`, `LMdata`, `GLMdata`, `IIDdata`). If a list, it
@@ -55,6 +55,10 @@ print(object, replication = 1, iteration = 1)
 
   Integer; which iteration within the replication to plot (LMM/GLMM,
   LM/GLM only; default `1`).
+
+- ...:
+
+  Any additional arguments.
 
 ## Details
 

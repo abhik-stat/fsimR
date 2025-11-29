@@ -136,7 +136,7 @@ following (case-insensitive) aliases for common distributions.
 | lambda = 1                                                           | Normal                                                        | normal, gaussian, norm → [rnorm](https://rdrr.io/r/stats/Normal.html) | mean = 0, sd = 1                                              |
 | Multivariate Normal                                                  | mvnorm, mvn → mvtnorm::rmvnorm                                | mean = rep(0, dim), sigma = diag(dim)                                 | Multivariate Normal (Singular)                                |
 | smvnorm, smvn → [mgcv::rmvn](https://rdrr.io/pkg/mgcv/man/rmvn.html) | mu = rep(0, dim), V = diag(dim)                               | Multivariate t                                                        | mvt → mvtnorm::rmvt                                           |
-| sigma = diag(dim), df = 5, delta = rep(0, dim)                       | Multivariate t (Singular)                                     | smvt → r.mvnt                                                         | mu = rep(0, dim), V = diag(dim), df = 5                       |
+| sigma = diag(dim), df = 5, delta = rep(0, dim)                       | Multivariate t (Singular)                                     | smvt → [mgcv::r.mvt](https://rdrr.io/pkg/mgcv/man/rmvn.html)          | mu = rep(0, dim), V = diag(dim), df = 5                       |
 | Skew-normal (univariate)                                             | skewnorm, sn → [sn::rsn](https://rdrr.io/pkg/sn/man/dsn.html) | xi = 0, omega = 1, alpha = 0, tau = 0                                 | Skew-normal (multivariate)                                    |
 | mvsnorm, mvsn → [sn::rmsn](https://rdrr.io/pkg/sn/man/dmsn.html)     | xi = alpha = rep(0, dim), Omega = diag(dim), tau = 0          | Skew-t (univariate)                                                   | skewt, st → [sn::rst](https://rdrr.io/pkg/sn/man/dst.html)    |
 | xi = 0, omega = 1, alpha = 0, nu = 5                                 | Skew-t (multivariate)                                         | mvskewt, mvst → [sn::rmst](https://rdrr.io/pkg/sn/man/dmst.html)      | xi = alpha = rep(0, dim), Omega = diag(dim), nu = 5           |
@@ -190,48 +190,48 @@ case):
 
 - Azzalini A, Capitanio A (2013). *The Skew-Normal and Related Families*
   Cambridge University Press. ISBN 978-1-107-02927-9.
-  <https://doi.org/10.1017/CBO9781139248891>
+  [Link](https://www.cambridge.org/core/books/skewnormal-and-related-families/4B9A3CD9D58EB6022FC1D21E1E08A10E)
 
 - Adcock C, Dias A, Salmon M (Eds) (2013). *Copulae & Multivariate
   Probability Distributions in Finance* Routledge. ISBN
   978-0-415-81485-0.
-  <https://www.routledge.com/Copulae-and-Multivariate-Probability-Distributions-in-Finance/Adcock-Dias-Salmon/p/book/9780415814850>
+  [Link](https://www.routledge.com/Copulae-and-Multivariate-Probability-Distributions-in-Finance/Adcock-Dias-Salmon/p/book/9780415814850)
 
 - Durante F, Sempi C (2015). *Principles of Copula Theory* CRC Press.
   ISBN 978-1-439-88442-3.
-  <https://www.crcpress.com/Principles-of-Copula-Theory/Durante-Sempi/p/book/9781439884423>
+  [Link](https://www.routledge.com/Principles-of-Copula-Theory/Durante-Sempi/p/book/9781439884423)
 
 - Genton MG (Ed) (2004). *Skew-Elliptical Distributions and Their
   Applications: A Journey Beyond Normality* Chapman & Hall / CRC Press.
   ISBN 978-0-415-36559-7.
-  <https://www.routledge.com/Skew-Elliptical-Distributions-and-Their-Applications-A-Journey-Beyond-Normality/Genton/p/book/9780367578312>
+  [Link](https://www.routledge.com/Skew-Elliptical-Distributions-and-Their-Applications-A-Journey-Beyond-Normality/Genton/p/book/9780367578312)
 
 - Johnson NL, Kotz S, Balakrishnan N (1994). *Continuous Univariate
   Distributions, Volume 1* (2nd ed.) Wiley. ISBN 978-0-471-58495-7.
-  <https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+1%2C+2nd+Edition-p-9780471584957>
+  [Link](https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+1%2C+2nd+Edition-p-9780471584957)
 
 - Johnson NL, Kotz S, Balakrishnan N (1995). *Continuous Univariate
   Distributions, Volume 2* (2nd ed.) Wiley. ISBN 978-0-471-58494-0.
-  <https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+2%2C+2nd+Edition-p-9780471584940>
+  [Link](https://www.wiley.com/en-us/Continuous+Univariate+Distributions%2C+Volume+2%2C+2nd+Edition-p-9780471584940)
 
 - Johnson NL, Kotz S, Balakrishnan N (1997). *Discrete Multivariate
   Distributions* Wiley. ISBN 978-0-471-12844-1.
-  <https://www.wiley.com/en-us/Discrete+Multivariate+Distributions-p-9780471128441>
+  [Link](https://www.wiley.com/en-us/Discrete+Multivariate+Distributions-p-9780471128441)
 
 - Johnson NL, Kotz S, Kemp AW (2005). *Univariate Discrete
-  Distributions* (3rd ed.) Wiley.
-  <https://www.wiley.com/en-us/Univariate+Discrete+Distributions%2C+3rd+Edition-p-9780471712384>
+  Distributions* (3rd ed.) Wiley. ISBN 978-0-471-27246-5.
+  [Link](https://www.wiley.com/en-us/Univariate+Discrete+Distributions%2C+3rd+Edition-p-9780471272465)
 
 - Kotz S, Balakrishnan N, Johnson NL (2000). *Continuous Multivariate
   Distributions, Volume 1: Models & Applications* (2nd ed.) Wiley. ISBN
   978-0-471-18387-7.
-  <https://www.wiley.com/en-us/Continuous+Multivariate+Distributions%2C+Volume+1%3A+Models+and+Applications-p-9780471183877>
+  [Link](https://www.wiley.com/en-us/Continuous+Multivariate+Distributions%2C+Volume+1%3A+Models+and+Applications-p-9780471183877)
 
 - Lai CD, Balakrishnan N (2002). *Continuous Bivariate Distributions*
-  Springer. <https://link.springer.com/book/10.1007/b101765>
+  Springer. [Link](https://link.springer.com/book/10.1007/b101765)
 
 - Nelsen RB (2006). *An Introduction to Copulas* (2nd ed.) Springer.
-  <https://link.springer.com/book/10.1007/0-387-28678-0>
+  [Link](https://link.springer.com/book/10.1007/0-387-28678-0)
 
 ## See also
 

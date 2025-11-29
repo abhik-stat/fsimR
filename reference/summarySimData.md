@@ -28,28 +28,22 @@ For details of summary statistics, see Details.
 
 ``` r
 # S3 method for class 'LMMdata'
-summary(object, replication = 1, iteration = 1)
+summary(object, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'GLMMdata'
-summary(object, replication = 1, iteration = 1)
+summary(object, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'LMdata'
-summary(object, replication = 1, iteration = 1)
+summary(object, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'GLMdata'
-summary(object, replication = 1, iteration = 1)
+summary(object, replication = 1, iteration = 1, ...)
 
 # S3 method for class 'IIDdata'
-summary(data)
-
-# S3 method for class 'numeric'
-summary(object)
-
-# S3 method for class 'matrix'
-summary(object)
+summary(object, ...)
 
 # S3 method for class 'list'
-summary(object, replication = 1, iteration = 1)
+summary(object, replication = 1, iteration = 1, ...)
 ```
 
 ## Arguments
@@ -69,6 +63,10 @@ summary(object, replication = 1, iteration = 1)
 
   Integer; which iteration within the replication to plot (LMM/GLMM,
   LM/GLM only; default `1`).
+
+- ...:
+
+  Any additional arguments.
 
 ## Value
 

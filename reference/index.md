@@ -3,8 +3,13 @@
 ## All functions
 
 - [`add_contamination()`](https://abhik-stat.github.io/fsimR/reference/add_contamination.md)
-  : Add Contamination to Simulated Data
-- [`construct_covMatrix()`](https://abhik-stat.github.io/fsimR/reference/construct_covMatrix.md)
+  : Add Contamination/noises to Simulated Data
+- [`as.covMat()`](https://abhik-stat.github.io/fsimR/reference/asClass.md)
+  [`as.IIDdata()`](https://abhik-stat.github.io/fsimR/reference/asClass.md)
+  [`as.LMMdata()`](https://abhik-stat.github.io/fsimR/reference/asClass.md)
+  [`as.LMdata()`](https://abhik-stat.github.io/fsimR/reference/asClass.md)
+  : Coercion helpers for package-specific S3 classes
+- [`construct_covMat()`](https://abhik-stat.github.io/fsimR/reference/construct_covMat.md)
   : Construct Structured Covariance or Correlation Matrices (non-random)
 - [`distr_spec()`](https://abhik-stat.github.io/fsimR/reference/distr_spec.md)
   : Distribution Specification Constructor
@@ -26,7 +31,7 @@
 - [`simulate_IIDdata()`](https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.md)
   : Simulate IID Data from a Wide Range of Distributions
 - [`simulate_LMMdata()`](https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.md)
-  : Simulate Data from a Linear Mixed Model (LMM)
+  : Simulate Data from a Linear Mixed Model
 - [`simulate_LMdata()`](https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.md)
   : Simulate Data from a Linear Regression Model
 - [`summary(`*`<LMMdata>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
@@ -34,7 +39,5 @@
   [`summary(`*`<LMdata>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
   [`summary(`*`<GLMdata>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
   [`summary(`*`<IIDdata>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
-  [`summary(`*`<numeric>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
-  [`summary(`*`<matrix>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
   [`summary(`*`<list>`*`)`](https://abhik-stat.github.io/fsimR/reference/summarySimData.md)
   : Summarize Simulated Data

@@ -38,20 +38,22 @@ The `fsimR` package provides the following functions.
 
 ### Helper Functions
 
-| Function Name    | Documentation                                                                           | Description                                                |
-|------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------|
-| `distr_spec`     | [`distr_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/distr_spec.html)         | Distribution Specification Constructor                     |
-| `sim_spec`       | [`sim_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/sim_spec.html)             | Simulation Specification Constructor                       |
-| `match.fun.allR` | [`match.fun.allR.Rd`](https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html) | Find a Function Across Base R and All Installed R Packages |
+| Function Name                                                                               | Documentation                                                                   | Description                             |
+|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|-----------------------------------------|
+| [`construct_covMat.Rd`](https://abhik-stat.github.io/fsimR/reference/construct_covMat.html) | Construct Structured Covariance or Correlation Matrices (non-random)            |                                         |
+| [`match.fun.allR.Rd`](https://abhik-stat.github.io/fsimR/reference/match.fun.allR.html)     | Find a Function Across Base R and All Installed R Packages.                     |                                         |
+| `distr_spec`                                                                                | [`distr_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/distr_spec.html) | Distribution Specification Constructor. |
+| `sim_spec`                                                                                  | [`sim_spec.Rd`](https://abhik-stat.github.io/fsimR/reference/sim_spec.html)     | Simulation Specification Constructor.   |
+| `match.fun.allR`                                                                            |                                                                                 |                                         |
 
 ### Main Simulation Functions
 
 | Function Name       | Documentation                                                                               | Description                                                                       |
 |---------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| `add_contamination` | [add_contamination.Rd](https://abhik-stat.github.io/fsimR/reference/add_contamination.html) | Adds contamination/noise to simulated data.                                       |
+| `add_contamination` | [add_contamination.Rd](https://abhik-stat.github.io/fsimR/reference/add_contamination.html) | Add Contamination/noises to Simulated Data.                                       |
 | `simulate_IIDdata`  | [simulate_IIDdata.Rd](https://abhik-stat.github.io/fsimR/reference/simulate_IIDdata.html)   | Simulate IID Data from a Wide Range of Univariate and Multivariate Distributions. |
-| `simulate_LMdata`   | [simulate_LMdata.Rd](https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.html)     | Simulate Data from a Linear Regression Model                                      |
-| `simulate_LMMdata`  | [simulate_LMMdata.Rd](https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.html)   | Simulate Data from a Linear Mixed Model (LMM)                                     |
+| `simulate_LMdata`   | [simulate_LMdata.Rd](https://abhik-stat.github.io/fsimR/reference/simulate_LMdata.html)     | Simulate Data from a Linear Regression Model.                                     |
+| `simulate_LMMdata`  | [simulate_LMMdata.Rd](https://abhik-stat.github.io/fsimR/reference/simulate_LMMdata.html)   | Simulate Data from a Linear Mixed Model.                                          |
 
 ### S3 Generic Methods for Simulated Data
 
